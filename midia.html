@@ -1,97 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mídia | EE Alexandre de Gusmão</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Mídia | Escola Alexandre de Gusmão</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="social-sidebar">
-        <a href="#" class="social-btn discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
-        <a href="#" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-btn facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-btn youtube" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-        <a href="#" class="social-btn tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
 
     <header>
         <nav>
-            <div class="logo">EE Alexandre de Gusmão</div>
+            <div class="logo">Alexandre Gusmão</div>
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="https://www.beem.sp.gov.br/" target="_blank">Estágios</a></li> 
-                
-                <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="midia.html">Mídia</a></li>
-                <li><a href="https://www.educacao.sp.gov.br/" target="_blank">Seduc SP</a></li>
                 <li><a href="fale-conosco.html">Fale Conosco</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        
+        <div class="hero">
+            <h1>Na Mídia</h1>
+            <p>A Escola Alexandre de Gusmão em destaque na imprensa.</p>
+        </div>
+
         <div class="content-wrapper">
             
-            <div class="main-content">
-                <section class="page-section hero">
-                    <h1>Nossas Redes e Notícias</h1>
-                    <p>Confira fotos, vídeos e reportagens sobre a vida acadêmica e os projetos de destaque dos nossos alunos e professores.</p>
-                    
-                    <h2>Redes Sociais</h2>
-                    <p>Siga-nos nas plataformas laterais para atualizações diárias e comunicados importantes. Usamos o Instagram para eventos e o Discord para comunicação direta com os alunos.</p>
+            <section class="main-content">
+                
+                <h2 style="color: #B64340;">Destaque na Secretaria da Educação (SEDUC-SP)</h2>
 
-                    <h2>Galeria de Fotos</h2>
-                    <p>Em breve: uma galeria interativa com imagens de formaturas, visitas técnicas e projetos dos cursos.</p>
-                    
-                    <h2>Imprensa</h2>
-                    <p>Para solicitações de imprensa ou parcerias de mídia, entre em contato com o nosso setor de comunicação através da página Fale Conosco.</p>
-                </section>
-            </div>
+                <div class="video-container" style="max-width: 100%; margin: 20px auto; text-align: center;">
+                    <iframe 
+                        width="100%" 
+                        height="500" 
+                        src="seduc.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    </iframe>
+                </div>
+                
+                <p style="margin-top: 30px; font-size: 1.1rem; line-height: 1.6;">
+                    O vídeo destaca a diversidade de cursos técnicos oferecidos pela E.E. Alexandre de Gusmão, incluindo Farmácia, Ciência de Dados, Análise de Sistemas, Vendas e Administração. 
+                    Ele também enfatiza o sucesso da participação dos alunos no programa **BEEM** (Bolsa Estágio Ensino Médio), que já contratou mais de 2.000 alunos no estado de São Paulo, mostrando depoimentos de estudantes que obtiveram oportunidades de emprego e a relevância do curso para o mercado de trabalho.
+                </p>
 
-            <section class="courses-sidebar">
-                <h2>Cursos Técnicos</h2>
+
+            </section>
+            
+            <aside class="courses-sidebar">
+                <h2>Saiba Mais</h2>
                 <div class="course-list-sidebar">
-                    <a href="cursos.html#adm" class="course-link-sidebar">
-                        <img src="logoadm.jpeg" alt="Logo Administração">
-                        <span>Administração</span>
-                    </a>
                     <a href="cursos.html#dados" class="course-link-sidebar">
-                        <img src="logocienciadedados.jpeg" alt="Logo Ciência de Dados">
-                        <span>Ciência de Dados</span>
+                        <img src="logocienciadedados.jpeg" alt="Ícone Dados">Ciência de Dados
                     </a>
-                    <a href="cursos.html#dev" class="course-link-sidebar">
-                        <img src="logodesenvolvimentodesistemas.jpeg" alt="Logo Desenvolvimento de Sistemas">
-                        <span>Desenvolvimento de Sistemas</span>
+                    <a href="cursos.html#farmacia" class="course-link-sidebar">
+                        <img src="logofarmacia.jpeg" alt="Ícone Farmácia">Técnico em Farmácia
                     </a>
-                    <a href="cursos.html#enf" class="course-link-sidebar">
-                        <img src="logoenfermagem.jpeg" alt="Logo Enfermagem">
-                        <span>Enfermagem</span>
-                    </a>
-                    <a href="cursos.html#farm" class="course-link-sidebar">
-                        <img src="logofarmacia.jpeg" alt="Logo Farmácia">
-                        <span>Farmácia</span>
+                    <a href="cursos.html#sistemas" class="course-link-sidebar">
+                        <img src="logodesenvolvimentodesistemas.jpeg" alt="Ícone Sistemas">Análise de Sistemas
                     </a>
                     <a href="cursos.html#vendas" class="course-link-sidebar">
-                        <img src="logovendas.jpeg" alt="Logo Vendas">
-                        <span>Vendas</span>
+                        <img src="logovendas.jpeg" alt="Ícone Vendas">Vendas
+                    </a>
+                    <a href="cursos.html#administracao" class="course-link-sidebar">
+                        <img src="logoadm.jpeg" alt="Ícone Administração">Administração
                     </a>
                 </div>
-            </section>
-        </div>
+            </aside>
+
+        </div> 
     </main>
 
     <footer>
-        <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>
+        <p>Desenvolvido por Alunos | E.E. Alexandre de Gusmão - 2025</p>
+        <p>Acesse o programa: <a href="https://beem.sp.gov.br" target="_blank">beem.sp.gov.br</a></p>
     </footer>
 
+    <div id="social-sidebar">
+        <a href="#" class="social-btn discord"><i class="fab fa-discord"></i></a>
+        <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <div id="chatbot-container">
+        <div id="chatbot-label">Assistente</div>
+        <div id="chatbot-toggle">
+            <img src="chatbot.gif" alt="Ícone Chatbot" class="chatbot-icon">
+        </div>
+        <div id="chatbot-box">
+            <div id="chat-header">
+                Chatbot Alex<button id="chat-close">X</button>
+            </div>
+            <div id="chat-messages">
+                </div>
+            <div id="chat-input-container">
+                <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+                <button id="send-btn">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
