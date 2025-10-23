@@ -1,6 +1,6 @@
 /* Paleta de Cores Marsala
    Principal (Marsala): #964F4C 
-   Secundária (Bordô Escuro): #5D3A3B (Contraste, Rodapé)
+   Secundária (Bordô Escuro): #5D3A3B (Contraste, Rodapé, NOVO fundo do pop-up)
    Claro (Bege Rosado): #F5E6E8 (Fundo leve, Degradê)
    Destaque (Pêssego/Cobre): #D9A098 (Hover, Logo)
 */
@@ -264,29 +264,164 @@ footer a:hover {
     background-color: #964F4C !important; /* Marsala no hover de todos os botões */
 }
 
-/* --- Estilo para o Botão de Chamada para Ação na Página de Estágios --- */
-.call-to-action-button {
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 15px;
-    background-color: #D9A098; /* Pêssego/Cobre de Destaque */
-    color: #5D3A3B; /* Bordô Escuro */
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* ----------------------------------------------- */
+/* Estilos do Chatbot (Pop-up de Canto AUMENTADO) */
+/* ----------------------------------------------- */
+
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column; /* Coloca o texto acima do botão */
+    align-items: flex-end; /* Alinha o texto à direita (acima do botão) */
 }
 
-.call-to-action-button:hover {
-    background-color: #964F4C; /* Marsala no hover */
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+/* Estilo para o texto "ChatBot" */
+#chatbot-label {
+    color: #5D3A3B; /* Bordô Escuro */
+    font-weight: 700;
+    margin-bottom: 5px; /* Espaço entre o texto e o botão */
+    background-color: #D9A098; /* Pêssego/Cobre de fundo */
+    padding: 5px 10px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
+
+/* Estilo para a imagem dentro do botão do chatbot */
+.chatbot-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 10px; /* Aumentado o padding para a imagem respirar */
+    box-sizing: border-box;
+}
+
+#chatbot-toggle {
+    /* DOBRA O TAMANHO: 120px x 120px (Antes: 60px x 60px) */
+    width: 120px;
+    height: 120px;
+    background-color: #964F4C;
+    border: none;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatbot-toggle:hover {
+    background-color: #5D3A3B;
+    transform: scale(1.05);
+}
+
+#chatbot-box {
+    display: none;
+    /* Move o box mais para cima devido ao botão maior (120px + 5px de margem) */
+    bottom: 140px; 
+    right: 0;
+    width: 320px;
+    height: 400px;
+    /* COR DE FUNDO ALTERADA para Bordô Escuro */
+    background-color: #5D3A3B; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chatbot-box.open {
+    display: flex;
+}
+
+#chat-header {
+    /* COR DO HEADER INVERTIDA para contraste com o novo fundo do box */
+    background-color: #964F4C; /* Marsala Principal */
+    color: white;
+    padding: 10px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    /* Fundo branco para a área de mensagens */
+    background-color: white; 
+}
+
+.message {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.user-message {
+    background-color: #D9A098; /* Pêssego/Cobre */
+    color: #333;
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: #eee;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+#chat-input-container {
+    display: flex;
+    /* Cor da linha divisória alterada para contraste no novo fundo */
+    border-top: 1px solid #D9A098; 
+    background-color: #f7f7f7; /* Fundo do input */
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    font-size: 0.9rem;
+    outline: none;
+    background-color: transparent;
+}
+
+#send-btn {
+    background-color: #964F4C;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #B67370;
+}
+
 
 /* ----------------------------------------------- */
 /* Responsividade */
@@ -361,5 +496,25 @@ footer a:hover {
     .social-btn:hover {
         width: 40px; 
         box-shadow: none;
+    }
+    
+    /* Ajuste do chatbot para telas pequenas */
+    #chatbot-box {
+        bottom: 150px; /* Ajuste para o botão maior e o menu social do mobile */
+        right: 10px;
+        width: 90%;
+        max-width: 300px;
+    }
+    #chatbot-container {
+        right: 10px;
+        bottom: 70px; /* Mantém o botão acima do menu social do mobile */
+    }
+    #chatbot-toggle {
+        width: 80px; /* Redução para mobile */
+        height: 80px;
+    }
+    #chatbot-label {
+        /* Esconde o label em telas muito pequenas para economizar espaço */
+        display: none; 
     }
 }
