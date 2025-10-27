@@ -9,6 +9,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+    <style>
+        .course-detail {
+            background-color: #F5E6E8; /* Cor Claro (Bege Rosado) */
+            border: 1px solid #B64340; /* Cor Marsala Intenso */
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .course-detail h2 {
+            color: #B64340;
+            margin-top: 0;
+            padding-bottom: 5px;
+            border-bottom: 3px solid #FFB7A7; /* Destaque Pêssego */
+        }
+        
+        .course-detail p {
+            line-height: 1.6;
+        }
+
+        .course-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #5D3A3B;
+        }
+
+        .course-info span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Oculta os links de cursos na sidebar para a página de cursos, 
+           mas mantém a estrutura para a responsividade da coluna */
+        /* .courses-sidebar .course-list-sidebar { display: none; } */
+        /* A sidebar em si pode ser usada para um índice interno ou remover o conteúdo caso queira uma coluna única. */
+
+    </style>
 </head>
 <body>
     
@@ -24,9 +64,11 @@
         <nav>
             <div class="logo">EE Alexandre de Gusmão</div>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="estagios.html">Estágios</a></li>
+                <li><a href="index.html">Início</a></li> 
+                
+                <li class="active"><a href="cursos.html">Cursos</a></li>
+                <li><a href="https://www.beem.sp.gov.br/" target="_blank">Estágios</a></li> 
+                
                 <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="midia.html">Mídia</a></li>
                 <li><a href="https://www.educacao.sp.gov.br/" target="_blank">Seduc SP</a></li>
@@ -37,36 +79,74 @@
     </header>
 
     <main>
+        
+        <div class="hero">
+            <h1>Nossos Cursos Técnicos</h1>
+            <p>Formando profissionais de sucesso para o mercado do futuro.</p>
+        </div>
+
         <div class="content-wrapper">
             
-            <div class="main-content">
-                <section class="page-section">
-                    <h1>Nossa Grade de Cursos Técnicos</h1>
-                    <p>Conheça as áreas de formação que oferecemos e descubra o caminho ideal para sua carreira profissional. Nossos cursos combinam teoria, prática e tecnologia.</p>
-                    
-                    <h2 id="adm">Administração</h2>
-                    <p>O curso prepara o aluno para atuar nas áreas de protocolo, arquivo, confecção de documentos e controle de estoques. Uma base essencial para qualquer negócio.</p>
-                    
-                    <h2 id="dados">Ciência de Dados</h2>
-                    <p>Foque no futuro! Aprenda a coletar, tratar e interpretar grandes volumes de dados para gerar insights e apoiar a tomada de decisões estratégicas.</p>
-                    
-                    <h2 id="dev">Desenvolvimento de Sistemas</h2>
-                    <p>Torne-se um desenvolvedor. Desenhe, programe e implemente sistemas de informação, aplicativos web e mobile com as linguagens mais atuais do mercado.</p>
-                    
-                    <h2 id="enf">Enfermagem</h2>
-                    <p>Uma profissão de cuidado e dedicação. O curso capacita o aluno para auxiliar a equipe de saúde em procedimentos, higiene e assistência direta ao paciente.</p>
-                    
-                    <h2 id="farm">Farmácia</h2>
-                    <p>Atue na distribuição e manipulação de medicamentos. O técnico em farmácia é crucial na orientação ao público e no controle de qualidade de produtos farmacêuticos.</p>
+            <section class="main-content">
+                
+                <article class="course-detail" id="adm">
+                    <h2>Técnico em Administração</h2>
+                    <div class="course-info">
+                        <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
+                        <span><i class="fas fa-user-tie"></i> Eixo Tecnológico: Gestão e Negócios</span>
+                    </div>
+                    <p>O curso prepara o aluno para atuar no planejamento, organização e controle das rotinas administrativas em empresas de diversos portes e setores. Abrange áreas como finanças, logística, marketing e gestão de pessoas.</p>
+                </article>
 
-                    <h2 id="vendas">Vendas</h2>
-                    <p>Desenvolva habilidades em negociação, prospecção e gestão de clientes. Um curso prático para quem busca sucesso na área comercial e de marketing.</p>
+                <article class="course-detail" id="dados">
+                    <h2>Técnico em Ciência de Dados</h2>
+                    <div class="course-info">
+                        <span><i class="fas fa-clock"></i> Duração: 4 semestres</span>
+                        <span><i class="fas fa-chart-line"></i> Eixo Tecnológico: Informação e Comunicação</span>
+                    </div>
+                    <p>Focado em coletar, processar, analisar e interpretar grandes volumes de dados (Big Data) para auxiliar na tomada de decisões estratégicas, utilizando ferramentas de programação e machine learning.</p>
+                </article>
+                
+                <article class="course-detail" id="dev">
+                    <h2>Técnico em Desenvolvimento de Sistemas</h2>
+                    <div class="course-info">
+                        <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
+                        <span><i class="fas fa-code"></i> Eixo Tecnológico: Informação e Comunicação</span>
+                    </div>
+                    <p>Capacita o aluno a projetar, desenvolver e testar sistemas de software para web e dispositivos móveis, utilizando as linguagens de programação e metodologias ágeis mais atuais do mercado.</p>
+                </article>
+                
+                <article class="course-detail" id="enf">
+                    <h2>Técnico em Enfermagem</h2>
+                    <div class="course-info">
+                        <span><i class="fas fa-clock"></i> Duração: 4 semestres + Estágio Supervisionado</span>
+                        <span><i class="fas fa-user-md"></i> Eixo Tecnológico: Saúde e Segurança</span>
+                    </div>
+                    <p>Forma profissionais aptos a prestar assistência de enfermagem em hospitais, clínicas e domicílios, seguindo protocolos de segurança e humanização. Um curso com grande demanda no mercado.</p>
+                </article>
 
-                </section>
-            </div>
+                <article class="course-detail" id="farm">
+                    <h2>Técnico em Farmácia</h2>
+                    <div class="course-info">
+                        <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
+                        <span><i class="fas fa-pills"></i> Eixo Tecnológico: Saúde e Segurança</span>
+                    </div>
+                    <p>Prepara para trabalhar em farmácias, drogarias e indústrias farmacêuticas, auxiliando na manipulação, controle de qualidade e dispensação de medicamentos, sob supervisão do farmacêutico.</p>
+                </article>
+
+                <article class="course-detail" id="vendas">
+                    <h2>Técnico em Vendas</h2>
+                    <div class="course-info">
+                        <span><i class="fas fa-clock"></i> Duração: 2 semestres</span>
+                        <span><i class="fas fa-dollar-sign"></i> Eixo Tecnológico: Gestão e Negócios</span>
+                    </div>
+                    <p>O curso desenvolve habilidades em técnicas de negociação, prospecção de clientes, atendimento e pós-venda, preparando o aluno para atuar de forma estratégica no varejo, atacado e e-commerce.</p>
+                </article>
+                
+            </section>
 
             <section class="courses-sidebar">
-                <h2>Navegue</h2>
+                <h2>Acesso Rápido</h2>
                 <div class="course-list-sidebar">
                     <a href="#adm" class="course-link-sidebar">
                         <img src="logoadm.jpeg" alt="Logo Administração">
@@ -96,6 +176,34 @@
             </section>
         </div>
     </main>
+
+    <div id="chatbot-container">
+        <p id="chatbot-label">ChatBot</p>
+        <button id="chatbot-toggle" aria-label="Abrir Chatbot">
+            <img src="chatbot.gif" alt="Ícone de Chatbot" class="chatbot-icon">
+        </button>
+        <div id="chatbot-box">
+            <div id="chat-header">
+                Chat Suporte | Cursos Técnicos
+                <button id="chat-close" aria-label="Fechar Chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages">
+                <div class="message bot-message">
+                    Olá! Sou seu assistente de cursos da EE Alexandre de Gusmão.
+                    <br><br>
+                    Pergunte sobre **duração**, **requisitos**, **mercado** ou sobre um curso específico (**Administração**, **Enfermagem**, etc.)!
+                </div>
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+                <button id="send-btn" aria-label="Enviar">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>

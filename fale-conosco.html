@@ -24,14 +24,15 @@
         <nav>
             <div class="logo">EE Alexandre de Gusmão</div>
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html">Início</a></li> 
+                
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="https://www.beem.sp.gov.br/" target="_blank">Estágios</a></li> 
                 
                 <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="midia.html">Mídia</a></li>
                 <li><a href="https://www.educacao.sp.gov.br/" target="_blank">Seduc SP</a></li>
-                <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                <li class="active"><a href="fale-conosco.html">Fale Conosco</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
@@ -40,60 +41,48 @@
     <main>
         <div class="content-wrapper">
             
-            <div class="main-content">
-                <section class="page-section hero">
-                    <h1>Entre em Contato Conosco</h1>
-                    <p>Use os canais abaixo para falar com a secretaria, direção ou coordenação de cursos.</p>
-                    
-                    <h2>Informações de Contato</h2>
-                    <p>
-                        **Telefone:** (11) XXXX-XXXX (Secretaria)<br>
-                        **E-mail:** contato@eealexandregusmao.sp.gov.br<br>
-                        **Horário de Atendimento:** Segunda a Sexta, das 8h às 17h.
-                    </p>
-
-                    <h2>Localização</h2>
-                    <p>Estamos localizados na Rua Cisplatina, 298, Ipiranga, São Paulo/SP. Use o link do mapa no rodapé para traçar sua rota.</p>
-
-                    <h2>Envie uma Mensagem</h2>
-                    <p>Em breve: Um formulário de contato será inserido aqui para envio direto de mensagens.</p>
-
-                </section>
-            </div>
-
-            <section class="courses-sidebar">
-                <h2>Cursos Técnicos</h2>
-                <div class="course-list-sidebar">
-                    <a href="cursos.html#adm" class="course-link-sidebar">
-                        <img src="logoadm.jpeg" alt="Logo Administração">
-                        <span>Administração</span>
-                    </a>
-                    <a href="cursos.html#dados" class="course-link-sidebar">
-                        <img src="logocienciadedados.jpeg" alt="Logo Ciência de Dados">
-                        <span>Ciência de Dados</span>
-                    </a>
-                    <a href="cursos.html#dev" class="course-link-sidebar">
-                        <img src="logodesenvolvimentodesistemas.jpeg" alt="Logo Desenvolvimento de Sistemas">
-                        <span>Desenvolvimento de Sistemas</span>
-                    </a>
-                    <a href="cursos.html#enf" class="course-link-sidebar">
-                        <img src="logoenfermagem.jpeg" alt="Logo Enfermagem">
-                        <span>Enfermagem</span>
-                    </a>
-                    <a href="cursos.html#farm" class="course-link-sidebar">
-                        <img src="logofarmacia.jpeg" alt="Logo Farmácia">
-                        <span>Farmácia</span>
-                    </a>
-                    <a href="cursos.html#vendas" class="course-link-sidebar">
-                        <img src="logovendas.jpeg" alt="Logo Vendas">
-                        <span>Vendas</span>
-                    </a>
+            <section class="main-content">
+                <div class="hero">
+                    <h1>Fale Conosco</h1>
+                    <p>Entre em contato com a EE Alexandre de Gusmão</p>
                 </div>
+                
+                <section class="contact-form">
+                    <h2>Envie-nos uma Mensagem</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Enviar Mensagem</button>
+                    </form>
+                </section>
+
+                <section class="contact-info">
+                    <h2>Outros Canais</h2>
+                    <p><i class="fas fa-phone"></i> **Telefone:** (11) 5555-5555</p>
+                    <p><i class="fas fa-envelope"></i> **E-mail:** contato@eealexandregusmao.sp.gov.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> **Endereço:** Rua Cisplatina, 298, Ipiranga, São Paulo/SP</p>
+                </section>
             </section>
         </div>
     </main>
 
     <div id="chatbot-container">
+        <p id="chatbot-label">ChatBot</p>
+        
         <button id="chatbot-toggle" aria-label="Abrir Chatbot">
             <img src="chatbot.gif" alt="Ícone de Chatbot" class="chatbot-icon">
         </button>

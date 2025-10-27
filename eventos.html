@@ -9,6 +9,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+    <style>
+        .event-card {
+            background-color: #F5E6E8; /* Cor Claro (Bege Rosado) */
+            border: 1px solid #B64340; /* Cor Marsala Intenso */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .event-card h3 {
+            color: #B64340;
+            margin-top: 0;
+        }
+
+        .event-card .date-location {
+            font-style: italic;
+            color: #5D3A3B;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FFB7A7; /* Pêssego Vibrante */
+            color: #5D3A3B;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #B64340;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     
@@ -24,11 +69,12 @@
         <nav>
             <div class="logo">EE Alexandre de Gusmão</div>
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html">Início</a></li> 
+                
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="https://www.beem.sp.gov.br/" target="_blank">Estágios</a></li> 
                 
-                <li><a href="eventos.html">Eventos</a></li>
+                <li class="active"><a href="eventos.html">Eventos</a></li>
                 <li><a href="midia.html">Mídia</a></li>
                 <li><a href="https://www.educacao.sp.gov.br/" target="_blank">Seduc SP</a></li>
                 <li><a href="fale-conosco.html">Fale Conosco</a></li>
@@ -38,25 +84,40 @@
     </header>
 
     <main>
+        
+        <div class="hero">
+            <h1>Agenda de Eventos</h1>
+            <p>Palestras, workshops e feiras para a comunidade escolar e profissional.</p>
+        </div>
+
         <div class="content-wrapper">
             
-            <div class="main-content">
-                <section class="page-section hero">
-                    <h1>Nossos Próximos Eventos e Feiras</h1>
-                    <p>Fique por dentro das palestras, workshops, feiras culturais e encontros de tecnologia organizados pela EE Alexandre de Gusmão.</p>
-                    
-                    <h2>Feira de Profissões 2025</h2>
-                    <p>Data: 15 de Novembro | Hora: 9h às 16h</p>
-                    <p>Venha conhecer de perto os laboratórios de TI e saúde, converse com professores e ex-alunos e tire suas dúvidas sobre os cursos técnicos.</p>
+            <section class="main-content">
+                
+                <h2>Próximos Eventos</h2>
 
-                    <h2>Workshop de Cibersegurança</h2>
-                    <p>Data: 28 de Outubro | Hora: 19h (Online)</p>
-                    <p>Palestra gratuita focada em Desenvolvimento de Sistemas e Ciência de Dados, aberta a todos os interessados em segurança digital.</p>
-                    
-                    <h2>Calendário Completo</h2>
-                    <p>Para o calendário completo, consulte o mural da secretaria ou a área de comunicados do aluno.</p>
-                </section>
-            </div>
+                <article class="event-card">
+                    <h3>Feira de Carreiras Técnicas 2025</h3>
+                    <span class="date-location">Data: 15/05/2025 | Local: Ginásio da Escola</span>
+                    <p>Grandes empresas da região estarão presentes para recrutar e apresentar oportunidades de estágio e emprego aos nossos alunos.</p>
+                    <a href="#" class="cta-button">Inscrições Abertas</a>
+                </article>
+
+                <article class="event-card">
+                    <h3>Workshop de Cibersegurança para Devs</h3>
+                    <span class="date-location">Data: 28/04/2025 | Local: Laboratório de Informática</span>
+                    <p>Evento focado nas últimas tendências e práticas seguras para desenvolvedores de software, ministrado por ex-alunos de sucesso.</p>
+                    <a href="#" class="cta-button">Saiba Mais</a>
+                </article>
+                
+                <article class="event-card">
+                    <h3>Semana da Saúde e Bem-Estar</h3>
+                    <span class="date-location">Data: 05/03/2025 - 10/03/2025 | Local: Auditório Principal</span>
+                    <p>Série de palestras e atividades práticas promovidas pelos cursos de Enfermagem e Farmácia, abertas ao público.</p>
+                    <a href="#" class="cta-button">Ver Programação</a>
+                </article>
+                
+            </section>
 
             <section class="courses-sidebar">
                 <h2>Cursos Técnicos</h2>
@@ -89,6 +150,34 @@
             </section>
         </div>
     </main>
+
+    <div id="chatbot-container">
+        <p id="chatbot-label">ChatBot</p>
+        <button id="chatbot-toggle" aria-label="Abrir Chatbot">
+            <img src="chatbot.gif" alt="Ícone de Chatbot" class="chatbot-icon">
+        </button>
+        <div id="chatbot-box">
+            <div id="chat-header">
+                Chat Suporte | Cursos Técnicos
+                <button id="chat-close" aria-label="Fechar Chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages">
+                <div class="message bot-message">
+                    Olá! Sou seu assistente de cursos da EE Alexandre de Gusmão.
+                    <br><br>
+                    Pergunte sobre **duração**, **requisitos**, **mercado** ou sobre um curso específico (**Administração**, **Enfermagem**, etc.)!
+                </div>
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+                <button id="send-btn" aria-label="Enviar">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>

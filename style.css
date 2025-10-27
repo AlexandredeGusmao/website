@@ -434,11 +434,73 @@ footer a:hover {
 /* ----------------------------------------------- */
 
 @media (max-width: 900px) {
-    /* ... (Estilos de layout de coluna - sem alteração) ... */
     
-    /* Estilos da barra lateral social no mobile (mantidos, mas com hover mais vibrante) */
+    /* 1. Responsividade do Layout de Duas Colunas */
+    main {
+        padding: 15px; /* Reduz o padding do main em telas pequenas */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Transforma as duas colunas em uma única coluna */
+        gap: 20px;
+    }
+
+    /* A barra lateral agora aparece abaixo e pode se beneficiar de um padding extra */
+    .courses-sidebar {
+        order: 2; /* Coloca a barra lateral DEPOIS do conteúdo principal */
+        padding: 15px;
+    }
+
+    .main-content {
+        order: 1; /* Garante que o conteúdo principal venha primeiro */
+    }
+
+    /* 2. Responsividade do Menu de Navegação */
+    nav {
+        flex-direction: column; /* Logo e links em coluna */
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Links em coluna vertical */
+        text-align: center;
+        width: 100%;
+        margin-top: 15px;
+        display: none; /* Esconde o menu por padrão no mobile (seria exibido por JS) */
+    }
+    
+    /* Se você for implementar um menu hambúrguer com JS, este é o estilo para quando ele estiver aberto: */
+    /* nav ul.open { display: flex; } */
+
+    nav ul li {
+        margin: 5px 0; /* Espaçamento entre os links verticais */
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .hero h1 {
+        font-size: 2rem; /* Reduz o tamanho do título Hero */
+    }
+    
+    .hero p {
+        font-size: 1rem; /* Reduz o tamanho do parágrafo Hero */
+    }
+    
+    /* 3. Estilos da barra lateral social no mobile (mantidos, mas com hover mais vibrante) */
     #social-sidebar {
         /* ... (posição) ... */
+    }
+
+    .social-btn {
+        width: 40px; /* Reduz o tamanho no mobile */
+        height: 40px;
+        font-size: 1.4rem;
     }
 
     .social-btn:hover {
@@ -446,9 +508,10 @@ footer a:hover {
         width: 40px; 
         background-color: #FFB7A7 !important; 
         color: #5D3A3B !important;
+        transform: none; /* Remove a expansão lateral no hover mobile */
     }
     
-    /* Ajuste do chatbot para telas pequenas */
+    /* 4. Ajuste do chatbot para telas pequenas */
     #chatbot-box {
         bottom: 110px; /* Ajuste para o botão maior e o menu social do mobile */
         right: 10px;
@@ -462,6 +525,7 @@ footer a:hover {
     #chatbot-toggle {
         width: 80px; 
         height: 80px;
+        border-width: 3px; /* Borda menor */
     }
     #chatbot-label {
         display: none; 

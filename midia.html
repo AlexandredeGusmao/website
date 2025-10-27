@@ -1,23 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mídia | Escola Alexandre de Gusmão</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Mídia | EE Alexandre de Gusmão</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <div id="social-sidebar">
+        <a href="#" class="social-btn discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="#" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-btn facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-btn youtube" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-btn tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
 
     <header>
         <nav>
-            <div class="logo">Alexandre Gusmão</div>
+            <div class="logo">EE Alexandre de Gusmão</div>
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html">Início</a></li> 
+                
                 <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="midia.html">Mídia</a></li>
+                <li><a href="https://www.beem.sp.gov.br/" target="_blank">Estágios</a></li> 
+                
+                <li><a href="eventos.html">Eventos</a></li>
+                <li class="active"><a href="midia.html">Mídia</a></li>
+                <li><a href="https://www.educacao.sp.gov.br/" target="_blank">Seduc SP</a></li>
                 <li><a href="fale-conosco.html">Fale Conosco</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
     </header>
@@ -33,81 +49,96 @@
             
             <section class="main-content">
                 
-                <h2 style="color: #B64340;">Destaque na Secretaria da Educação (SEDUC-SP)</h2>
+                <h2>Destaques e Notícias Recentes</h2>
 
-                <div class="video-container" style="max-width: 100%; margin: 20px auto; text-align: center;">
-                    <iframe 
-                        width="100%" 
-                        height="500" 
-                        src="seduc.mp4" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                        style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-                    </iframe>
-                </div>
+                <article class="media-item">
+                    <h3>Título da Notícia 1: Campeões Estaduais de Matemática</h3>
+                    <p class="date">Publicado em 25 de Outubro de 2024</p>
+                    <p>Nossos alunos do curso de Ciência de Dados conquistaram o primeiro lugar no campeonato estadual, mostrando a excelência do nosso ensino técnico.</p>
+                    <a href="#" class="read-more">Leia Mais</a>
+                </article>
+
+                <article class="media-item">
+                    <h3>Título da Notícia 2: Parceria com Hospital da Região</h3>
+                    <p class="date">Publicado em 10 de Setembro de 2024</p>
+                    <p>O curso de Enfermagem firmou uma importante parceria com o Hospital Ipiranga, garantindo estágios de alta qualidade para todos os formandos.</p>
+                    <a href="#" class="read-more">Leia Mais</a>
+                </article>
                 
-                <p style="margin-top: 30px; font-size: 1.1rem; line-height: 1.6;">
-                    O vídeo destaca a diversidade de cursos técnicos oferecidos pela E.E. Alexandre de Gusmão, incluindo Farmácia, Ciência de Dados, Análise de Sistemas, Vendas e Administração. 
-                    Ele também enfatiza o sucesso da participação dos alunos no programa **BEEM** (Bolsa Estágio Ensino Médio), que já contratou mais de 2.000 alunos no estado de São Paulo, mostrando depoimentos de estudantes que obtiveram oportunidades de emprego e a relevância do curso para o mercado de trabalho.
-                </p>
-
-
+                <article class="media-item">
+                    <h3>Título da Notícia 3: Semana de Inovação em Vendas</h3>
+                    <p class="date">Publicado em 05 de Junho de 2024</p>
+                    <p>O curso de Vendas realizou um evento de sucesso com palestrantes renomados, focando nas últimas tendências de e-commerce e marketing digital.</p>
+                    <a href="#" class="read-more">Leia Mais</a>
+                </article>
+                
             </section>
-            
-            <aside class="courses-sidebar">
-                <h2>Saiba Mais</h2>
+
+            <section class="courses-sidebar">
+                <h2>Cursos Técnicos</h2>
                 <div class="course-list-sidebar">
+                    <a href="cursos.html#adm" class="course-link-sidebar">
+                        <img src="logoadm.jpeg" alt="Logo Administração">
+                        <span>Administração</span>
+                    </a>
                     <a href="cursos.html#dados" class="course-link-sidebar">
-                        <img src="logocienciadedados.jpeg" alt="Ícone Dados">Ciência de Dados
+                        <img src="logocienciadedados.jpeg" alt="Logo Ciência de Dados">
+                        <span>Ciência de Dados</span>
                     </a>
-                    <a href="cursos.html#farmacia" class="course-link-sidebar">
-                        <img src="logofarmacia.jpeg" alt="Ícone Farmácia">Técnico em Farmácia
+                    <a href="cursos.html#dev" class="course-link-sidebar">
+                        <img src="logodesenvolvimentodesistemas.jpeg" alt="Logo Desenvolvimento de Sistemas">
+                        <span>Desenvolvimento de Sistemas</span>
                     </a>
-                    <a href="cursos.html#sistemas" class="course-link-sidebar">
-                        <img src="logodesenvolvimentodesistemas.jpeg" alt="Ícone Sistemas">Análise de Sistemas
+                    <a href="cursos.html#enf" class="course-link-sidebar">
+                        <img src="logoenfermagem.jpeg" alt="Logo Enfermagem">
+                        <span>Enfermagem</span>
+                    </a>
+                    <a href="cursos.html#farm" class="course-link-sidebar">
+                        <img src="logofarmacia.jpeg" alt="Logo Farmácia">
+                        <span>Farmácia</span>
                     </a>
                     <a href="cursos.html#vendas" class="course-link-sidebar">
-                        <img src="logovendas.jpeg" alt="Ícone Vendas">Vendas
-                    </a>
-                    <a href="cursos.html#administracao" class="course-link-sidebar">
-                        <img src="logoadm.jpeg" alt="Ícone Administração">Administração
+                        <img src="logovendas.jpeg" alt="Logo Vendas">
+                        <span>Vendas</span>
                     </a>
                 </div>
-            </aside>
+            </section>
 
         </div> 
     </main>
-
-    <footer>
-        <p>Desenvolvido por Alunos | E.E. Alexandre de Gusmão - 2025</p>
-        <p>Acesse o programa: <a href="https://beem.sp.gov.br" target="_blank">beem.sp.gov.br</a></p>
-    </footer>
-
-    <div id="social-sidebar">
-        <a href="#" class="social-btn discord"><i class="fab fa-discord"></i></a>
-        <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
-    </div>
-
+    
     <div id="chatbot-container">
-        <div id="chatbot-label">Assistente</div>
-        <div id="chatbot-toggle">
-            <img src="chatbot.gif" alt="Ícone Chatbot" class="chatbot-icon">
-        </div>
+        <p id="chatbot-label">ChatBot</p>
+        <button id="chatbot-toggle" aria-label="Abrir Chatbot">
+            <img src="chatbot.gif" alt="Ícone de Chatbot" class="chatbot-icon">
+        </button>
         <div id="chatbot-box">
             <div id="chat-header">
-                Chatbot Alex<button id="chat-close">X</button>
+                Chat Suporte | Cursos Técnicos
+                <button id="chat-close" aria-label="Fechar Chat">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             <div id="chat-messages">
+                <div class="message bot-message">
+                    Olá! Sou seu assistente de cursos da EE Alexandre de Gusmão.
+                    <br><br>
+                    Pergunte sobre **duração**, **requisitos**, **mercado** ou sobre um curso específico (**Administração**, **Enfermagem**, etc.)!
                 </div>
+            </div>
             <div id="chat-input-container">
-                <input type="text" id="user-input" placeholder="Digite sua mensagem...">
-                <button id="send-btn">Enviar</button>
+                <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+                <button id="send-btn" aria-label="Enviar">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
         </div>
     </div>
     
+    <footer>
+        <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
