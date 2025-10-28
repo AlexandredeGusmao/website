@@ -568,3 +568,140 @@ footer a:hover {
         font-size: 1.3rem;
     }
 }
+
+/* ----------------------------------------------- */
+/* Fale Conosco Page Improvements (Form and Info) */
+/* ----------------------------------------------- */
+
+/* Formata o formulário e a seção de informações como "cards" brancos */
+.contact-form, .contact-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.contact-form h2, .contact-info h2 {
+    color: #B64340; /* Marsala Intenso */
+    border-bottom: 2px solid #FFB7A7; /* Pêssego Vibrante */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #5D3A3B; /* Bordô Profundo */
+}
+
+/* Estilo padronizado e alinhado para todos os campos de input e textarea */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #F5E6E8; /* Bege Rosado para o fundo do input */
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #B64340; /* Foco Marsala Intenso */
+    box-shadow: 0 0 0 3px rgba(182, 67, 64, 0.2);
+    outline: none;
+    background-color: white;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Estilo para as informações de contato */
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.contact-info i {
+    color: #B64340; /* Marsala Intenso para os ícones */
+    margin-right: 10px;
+    width: 20px; /* Ajuda a alinhar o texto após os ícones */
+    text-align: center;
+}
+
+/* Layout opcional para desktop: Form e Info lado a lado */
+@media (min-width: 768px) {
+    .contact-sections-container {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    
+    /* Ambos terão a mesma largura em desktop */
+    .contact-form {
+        flex: 2; /* Formulário pode ser um pouco maior */
+    }
+    .contact-info {
+        flex: 1; /* Informações de contato menores */
+    }
+
+    /* Remove o margin-bottom para o container gerenciar o espaçamento */
+    .contact-form, .contact-info {
+        margin-bottom: 0;
+    }
+}
+
+/* ----------------------------------------------- */
+/* Estilos para Imagens nos Cards de Curso */
+/* ----------------------------------------------- */
+.course-detail {
+    /* Garante que a imagem e o texto possam ser dispostos lado a lado */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+    gap: 20px;
+}
+
+.course-image {
+    width: 120px; /* Largura fixa da imagem */
+    height: 120px;
+    object-fit: contain; /* Garante que a imagem inteira seja visível */
+    padding: 10px;
+    border: 2px solid #FFB7A7; /* Borda Pêssego */
+    border-radius: 8px;
+    background-color: white;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.course-text-content {
+    flex-grow: 1; /* Permite que o conteúdo de texto ocupe o espaço restante */
+    min-width: 250px; /* Garante que o texto tenha espaço mínimo em desktop */
+}
+
+.course-detail h2 {
+    /* Ajusta o alinhamento do título quando a imagem está presente */
+    margin-top: -5px;
+}
+
+/* Responsividade: Em telas menores, a imagem ocupa a largura total antes de quebrar */
+@media (max-width: 600px) {
+    .course-image {
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+        margin-bottom: 10px;
+    }
+}

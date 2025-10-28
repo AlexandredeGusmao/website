@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+    
     <style>
         .course-detail {
             background-color: #F5E6E8; /* Cor Claro (Bege Rosado) */
@@ -17,6 +18,11 @@
             margin-bottom: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            
+            /* Novo: layout flex para alinhar imagem e texto */
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 20px;
         }
 
         .course-detail h2 {
@@ -36,6 +42,7 @@
             margin-top: 15px;
             font-weight: 500;
             color: #5D3A3B;
+            width: 100%; /* Garante que as informações de duração ocupem a linha toda */
         }
 
         .course-info span {
@@ -43,11 +50,28 @@
             margin-bottom: 5px;
         }
         
-        /* Oculta os links de cursos na sidebar para a página de cursos, 
-           mas mantém a estrutura para a responsividade da coluna */
-        /* .courses-sidebar .course-list-sidebar { display: none; } */
-        /* A sidebar em si pode ser usada para um índice interno ou remover o conteúdo caso queira uma coluna única. */
+        /* Novo: Conteúdo de texto ocupa o espaço restante */
+        .course-text-content {
+            flex-grow: 1;
+            min-width: 250px;
+        }
 
+        /* Novo: Estilo da Imagem */
+        .course-image {
+            width: 120px; 
+            height: 120px;
+            object-fit: contain;
+            padding: 10px;
+            border: 2px solid #FFB7A7; 
+            border-radius: 8px;
+            background-color: white;
+            flex-shrink: 0;
+        }
+        
+        /* Ajuste para melhor visualização na lista principal */
+        .main-content article:not(:last-child) {
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
@@ -90,57 +114,81 @@
             <section class="main-content">
                 
                 <article class="course-detail" id="adm">
-                    <h2>Técnico em Administração</h2>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
-                        <span><i class="fas fa-user-tie"></i> Eixo Tecnológico: Gestão e Negócios</span>
+                    <img src="logoadm.jpeg" alt="Logo Administração" class="course-image">
+                    <div class="course-text-content">
+                        <h2>Técnico em Administração</h2>
+                        <div class="course-info">
+                            <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
+                            <span><i class="fas fa-user-tie"></i> Eixo Tecnológico: Gestão e Negócios</span>
+                        </div>
+                        <p>O curso prepara o aluno para atuar no planejamento, organização e controle das rotinas administrativas em empresas de diversos portes e setores. Abrange áreas como finanças, logística, marketing e gestão de pessoas.</p>
+                        <a href="adm.html" class="cta-button" style="margin-top: 15px;">Ver Detalhes do Curso</a>
                     </div>
-                    <p>O curso prepara o aluno para atuar no planejamento, organização e controle das rotinas administrativas em empresas de diversos portes e setores. Abrange áreas como finanças, logística, marketing e gestão de pessoas.</p>
                 </article>
 
                 <article class="course-detail" id="dados">
-                    <h2>Técnico em Ciência de Dados</h2>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> Duração: 4 semestres</span>
-                        <span><i class="fas fa-chart-line"></i> Eixo Tecnológico: Informação e Comunicação</span>
+                    <img src="logocienciadedados.jpeg" alt="Logo Ciência de Dados" class="course-image">
+                    <div class="course-text-content">
+                        <h2>Técnico em Ciência de Dados</h2>
+                        <div class="course-info">
+                            <span><i class="fas fa-clock"></i> Duração: 4 semestres</span>
+                            <span><i class="fas fa-chart-line"></i> Eixo Tecnológico: Informação e Comunicação</span>
+                        </div>
+                        <p>Focado em coletar, processar, analisar e interpretar grandes volumes de dados (Big Data) para auxiliar na tomada de decisões estratégicas, utilizando ferramentas de programação e machine learning.</p>
+                        <a href="dados.html" class="cta-button" style="margin-top: 15px;">Ver Detalhes do Curso</a>
                     </div>
-                    <p>Focado em coletar, processar, analisar e interpretar grandes volumes de dados (Big Data) para auxiliar na tomada de decisões estratégicas, utilizando ferramentas de programação e machine learning.</p>
                 </article>
                 
                 <article class="course-detail" id="dev">
-                    <h2>Técnico em Desenvolvimento de Sistemas</h2>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
-                        <span><i class="fas fa-code"></i> Eixo Tecnológico: Informação e Comunicação</span>
+                    <img src="logodesenvolvimentodesistemas.jpeg" alt="Logo Desenvolvimento de Sistemas" class="course-image">
+                    <div class="course-text-content">
+                        <h2>Técnico em Desenvolvimento de Sistemas</h2>
+                        <div class="course-info">
+                            <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
+                            <span><i class="fas fa-code"></i> Eixo Tecnológico: Informação e Comunicação</span>
+                        </div>
+                        <p>Capacita o aluno a projetar, desenvolver e testar sistemas de software para web e dispositivos móveis, utilizando as linguagens de programação e metodologias ágeis mais atuais do mercado.</p>
+                        <a href="dev.html" class="cta-button" style="margin-top: 15px;">Ver Detalhes do Curso</a>
                     </div>
-                    <p>Capacita o aluno a projetar, desenvolver e testar sistemas de software para web e dispositivos móveis, utilizando as linguagens de programação e metodologias ágeis mais atuais do mercado.</p>
                 </article>
                 
                 <article class="course-detail" id="enf">
-                    <h2>Técnico em Enfermagem</h2>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> Duração: 4 semestres + Estágio Supervisionado</span>
-                        <span><i class="fas fa-user-md"></i> Eixo Tecnológico: Saúde e Segurança</span>
+                    <img src="logoenfermagem.jpeg" alt="Logo Enfermagem" class="course-image">
+                    <div class="course-text-content">
+                        <h2>Técnico em Enfermagem</h2>
+                        <div class="course-info">
+                            <span><i class="fas fa-clock"></i> Duração: 4 semestres + Estágio Supervisionado</span>
+                            <span><i class="fas fa-user-md"></i> Eixo Tecnológico: Saúde e Segurança</span>
+                        </div>
+                        <p>Forma profissionais aptos a prestar assistência de enfermagem em hospitais, clínicas e domicílios, seguindo protocolos de segurança e humanização. Um curso com grande demanda no mercado.</p>
+                        <a href="enf.html" class="cta-button" style="margin-top: 15px;">Ver Detalhes do Curso</a>
                     </div>
-                    <p>Forma profissionais aptos a prestar assistência de enfermagem em hospitais, clínicas e domicílios, seguindo protocolos de segurança e humanização. Um curso com grande demanda no mercado.</p>
                 </article>
 
                 <article class="course-detail" id="farm">
-                    <h2>Técnico em Farmácia</h2>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
-                        <span><i class="fas fa-pills"></i> Eixo Tecnológico: Saúde e Segurança</span>
+                    <img src="logofarmacia.jpeg" alt="Logo Farmácia" class="course-image">
+                    <div class="course-text-content">
+                        <h2>Técnico em Farmácia</h2>
+                        <div class="course-info">
+                            <span><i class="fas fa-clock"></i> Duração: 3 semestres</span>
+                            <span><i class="fas fa-pills"></i> Eixo Tecnológico: Saúde e Segurança</span>
+                        </div>
+                        <p>Prepara para trabalhar em farmácias, drogarias e indústrias farmacêuticas, auxiliando na manipulação, controle de qualidade e dispensação de medicamentos, sob supervisão do farmacêutico.</p>
+                        <a href="farm.html" class="cta-button" style="margin-top: 15px;">Ver Detalhes do Curso</a>
                     </div>
-                    <p>Prepara para trabalhar em farmácias, drogarias e indústrias farmacêuticas, auxiliando na manipulação, controle de qualidade e dispensação de medicamentos, sob supervisão do farmacêutico.</p>
                 </article>
 
                 <article class="course-detail" id="vendas">
-                    <h2>Técnico em Vendas</h2>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> Duração: 2 semestres</span>
-                        <span><i class="fas fa-dollar-sign"></i> Eixo Tecnológico: Gestão e Negócios</span>
+                    <img src="logovendas.jpeg" alt="Logo Vendas" class="course-image">
+                    <div class="course-text-content">
+                        <h2>Técnico em Vendas</h2>
+                        <div class="course-info">
+                            <span><i class="fas fa-clock"></i> Duração: 2 semestres</span>
+                            <span><i class="fas fa-dollar-sign"></i> Eixo Tecnológico: Gestão e Negócios</span>
+                        </div>
+                        <p>O curso desenvolve habilidades em técnicas de negociação, prospecção de clientes, atendimento e pós-venda, preparando o aluno para atuar de forma estratégica no varejo, atacado e e-commerce.</p>
+                        <a href="vendas.html" class="cta-button" style="margin-top: 15px;">Ver Detalhes do Curso</a>
                     </div>
-                    <p>O curso desenvolve habilidades em técnicas de negociação, prospecção de clientes, atendimento e pós-venda, preparando o aluno para atuar de forma estratégica no varejo, atacado e e-commerce.</p>
                 </article>
                 
             </section>

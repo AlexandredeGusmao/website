@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /*
+        .contact-sections-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        .contact-form { flex: 2; }
+        .contact-info { flex: 1; }
+        (Estilos completos devem estar no style.css)
+        */
+    </style>
+    
 </head>
 <body>
     
@@ -39,50 +53,56 @@
     </header>
 
     <main>
+        
+        <div class="hero">
+            <h1>Fale Conosco</h1>
+            <p>Entre em contato com a EE Alexandre de Gusmão</p>
+        </div>
+
         <div class="content-wrapper">
             
             <section class="main-content">
-                <div class="hero">
-                    <h1>Fale Conosco</h1>
-                    <p>Entre em contato com a EE Alexandre de Gusmão</p>
-                </div>
                 
-                <section class="contact-form">
-                    <h2>Envie-nos uma Mensagem</h2>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nome Completo</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Assunto</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button">Enviar Mensagem</button>
-                    </form>
-                </section>
+                <div class="contact-sections-container">
+                    
+                    <section class="contact-form">
+                        <h2>Envie-nos uma Mensagem</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nome Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Assunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-button">Enviar Mensagem</button>
+                        </form>
+                    </section>
+    
+                    <section class="contact-info">
+                        <h2>Outros Canais</h2>
+                        <p><i class="fas fa-phone"></i> **Telefone:** (11) 5555-5555</p>
+                        <p><i class="fas fa-envelope"></i> **E-mail:** contato@eealexandregusmao.sp.gov.br</p>
+                        <p><i class="fas fa-map-marker-alt"></i> **Endereço:** Rua Cisplatina, 298, Ipiranga, São Paulo/SP</p>
+                    </section>
 
-                <section class="contact-info">
-                    <h2>Outros Canais</h2>
-                    <p><i class="fas fa-phone"></i> **Telefone:** (11) 5555-5555</p>
-                    <p><i class="fas fa-envelope"></i> **E-mail:** contato@eealexandregusmao.sp.gov.br</p>
-                    <p><i class="fas fa-map-marker-alt"></i> **Endereço:** Rua Cisplatina, 298, Ipiranga, São Paulo/SP</p>
-                </section>
+                </div>
             </section>
-        </div>
+            
+            </div>
     </main>
 
     <div id="chatbot-container">
         <p id="chatbot-label">ChatBot</p>
-        
         <button id="chatbot-toggle" aria-label="Abrir Chatbot">
             <img src="chatbot.gif" alt="Ícone de Chatbot" class="chatbot-icon">
         </button>
@@ -108,6 +128,7 @@
             </div>
         </div>
     </div>
+    
     <footer>
         <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>
     </footer>
