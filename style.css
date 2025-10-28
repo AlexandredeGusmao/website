@@ -1,533 +1,132 @@
-/* Paleta de Cores Marsala (AGORA MAIS VIBRANTE)
-   Principal (Marsala Intenso): #B64340 (Mais vermelho e vivo)
-   Secundária (Bordô Profundo): #5D3A3B (Contraste, Rodapé)
-   Claro (Bege Rosado): #F5E6E8 (Fundo de Conteúdo, Leitura)
-   Destaque (Pêssego Vibrante): #FFB7A7 (Destaque, Hover VIVO)
-*/
+// --- Lógica do Contador de Acessos ---
+document.addEventListener('DOMContentLoaded', () => {
+    const counterElement = document.getElementById('access-counter');
+    const localStorageKey = 'page_access_count';
+    const initialCount = 1000;
 
-body {
-    /* Fontes: Roboto (Corpo) */
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    /* Degradê suave de Marsala para um tom mais claro */
-    background: linear-gradient(to right, #FFDADA, #FAEAEB); /* Fundo mais claro e rosado */
-    color: #333;
-}
+    if (counterElement && typeof(Storage) !== "undefined") {
+        let currentCount = localStorage.getItem(localStorageKey);
 
-header {
-    background-color: #B64340; /* Marsala Intenso para o cabeçalho */
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Sombra mais forte */
-}
+        if (currentCount === null) {
+            // Se for a primeira visita, inicia com o valor de 1000
+            currentCount = initialCount;
+        } else {
+            // Converte para número e incrementa
+            currentCount = parseInt(currentCount) + 1;
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        // Salva o novo valor no localStorage
+        localStorage.setItem(localStorageKey, currentCount);
 
-.logo {
-    /* Fontes: Roboto Slab (Formal e Forte) */
-    font-family: 'Roboto Slab', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #FFB7A7; /* Pêssego Vibrante */
-    text-shadow: 2px 2px #5D3A3B; 
-    text-transform: uppercase; 
-    transition: color 0.3s;
-}
-
-.logo:hover {
-    color: white; /* Mais brilho no hover */
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 700; /* Mais negrito */
-    transition: color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase;
-}
-
-nav ul li a:hover {
-    color: #FFB7A7; /* Pêssego Vibrante no hover */
-    transform: scale(1.1);
-}
-
-main {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 25px;
-    background-color: #FFFFFF; /* Fundo branco para o conteúdo principal */
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* Sombra maior e mais colorida */
-}
-
-/* --- Layout de duas colunas para o Main --- */
-.content-wrapper {
-    display: flex;
-    gap: 30px; 
-    align-items: flex-start; 
-}
-
-.main-content {
-    flex: 3; 
-    min-width: 0; 
-}
-
-/* --- Estilos da Seção Hero (Marsala) --- */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    margin-bottom: 0; 
-    /* Gradiente mais intenso */
-    background: linear-gradient(to right, #B64340, #D37471); 
-    color: white;
-    border-radius: 10px;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.4); /* Sombra interna mais forte */
-}
-
-.hero h1 {
-    font-family: 'Roboto Slab', serif;
-    font-size: 2.8rem; /* Fonte maior */
-    font-weight: 900; /* Mais negrito */
-    margin-bottom: 10px;
-    text-shadow: 4px 4px #5D3A3B; /* Sombra mais nítida */
-    text-transform: uppercase; 
-}
-
-.hero p {
-    font-size: 1.3rem; 
-    font-weight: 500; 
-    margin-bottom: 30px;
-}
-
-.image-container {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.image-container img {
-    max-width: 98%; 
-    height: auto;
-    border-radius: 10px;
-    border: 7px solid #5D3A3B; /* Borda mais grossa */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-    transition: transform 0.5s ease;
-}
-
-.image-container img:hover {
-    transform: rotate(2deg) scale(1.02); /* Efeito mais visível */
-}
-
-/* --- Menu de Cursos na Lateral Direita (Sidebar) --- */
-.courses-sidebar {
-    flex: 1;
-    background-color: #F5E6E8; 
-    padding: 20px;
-    border-radius: 15px; /* Bordas mais arredondadas */
-    border: 2px solid #B64340; /* Borda Marsala Intenso */
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.15); /* Sombra mais destacada */
-}
-
-.courses-sidebar h2 {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 900; /* Mais negrito */
-    font-size: 1.6rem; 
-    color: #B64340; 
-    margin-top: 0;
-    margin-bottom: 25px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.course-list-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Mais espaçamento */
-}
-
-.course-link-sidebar {
-    display: flex; 
-    align-items: center; 
-    justify-content: flex-start; 
-    
-    padding: 12px;
-    background-color: #B64340; /* Marsala Intenso */
-    color: white;
-    text-decoration: none;
-    text-align: left; 
-    border-radius: 8px; /* Mais arredondado */
-    font-weight: 700; 
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    border: 1px solid #FFB7A7; /* Borda Pêssego Vibrante */
-}
-
-/* Tamanho dos Logos */
-.course-link-sidebar img {
-    width: 35px;  /* Levemente maior */
-    height: 35px; 
-    object-fit: contain; 
-    background-color: transparent; 
-    border-radius: 50%; /* Torna os logos redondos */
-    margin-right: 15px; 
-}
+        // Atualiza o display no HTML com formatação
+        // Usei toLocaleString para adicionar o separador de milhar (ponto)
+        counterElement.textContent = `Acessos totais (iniciando em ${initialCount}): ${currentCount.toLocaleString('pt-BR')}`;
+    }
+});
+// Fim da Lógica do Contador de Acessos
 
 
-.course-link-sidebar:hover {
-    background-color: #FFB7A7; /* Pêssego Vibrante no hover */
-    color: #5D3A3B; /* Texto escuro para contraste */
-    transform: translateX(8px) scale(1.03); /* Efeito de deslize mais pronunciado */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-}
+// Você pode adicionar funcionalidades JavaScript aqui no futuro, se desejar.
 
-footer {
-    text-align: center;
-    padding: 30px; /* Mais padding */
-    background-color: #5D3A3B; 
-    color: white;
-    margin-top: 40px; 
-    box-shadow: 0 -6px 15px rgba(0,0,0,0.4);
-}
+console.log("Website da EE Alexandre de Gusmão carregado! Tema: Marsala.");
 
-footer p {
-    font-size: 1.2rem;
-}
+// --- Lógica do Chatbot ---
 
-footer a {
-    color: #FFB7A7; /* Pêssego Vibrante */
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (O código do contador de acesso foi movido para fora deste bloco para garantir a execução)
 
-footer a:hover {
-    color: white;
-    text-decoration: underline;
-}
+    const chatbox = document.getElementById('chatbot-box');
+    const toggleButton = document.getElementById('chatbot-toggle');
+    const closeButton = document.getElementById('chat-close');
+    const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-btn');
 
-/* ----------------------------------------------- */
-/* Estilos para a Barra Lateral Social (Mídias) */
-/* ----------------------------------------------- */
-
-#social-sidebar {
-    position: fixed; 
-    top: 50%; 
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-}
-
-.social-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 55px; /* Levemente maior */
-    height: 55px; 
-    margin-bottom: 8px; 
-    color: white;
-    text-decoration: none;
-    font-size: 1.8rem; /* Ícone maior */
-    border-radius: 0 8px 8px 0; /* Mais arredondado */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
-}
-
-/* Cores específicas (mantidas para reconhecimento da marca) */
-.discord { background-color: #5865F2; } /* Discord mais vibrante */
-.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #405DE6 90%); } /* Gradiente Instagram */
-.facebook { background-color: #1877F2; } /* Facebook mais vibrante */
-.youtube { background-color: #FF0000; } 
-.tiktok { background-color: #000000; }
-
-
-.social-btn:hover {
-    width: 70px; /* Expansão maior */
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
-    background-color: #FFB7A7 !important; /* Pêssego Vibrante no hover */
-    color: #5D3A3B !important;
-}
-
-/* ----------------------------------------------- */
-/* Estilos do Chatbot (Pop-up de Canto AUMENTADO) */
-/* ----------------------------------------------- */
-
-#chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1001;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-end; 
-}
-
-/* Estilo para o texto "ChatBot" */
-#chatbot-label {
-    color: #B64340; /* Marsala Intenso */
-    font-weight: 900;
-    margin-bottom: 5px; 
-    background-color: #FFB7A7; /* Pêssego Vibrante */
-    padding: 6px 12px;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-/* Estilo para a imagem dentro do botão do chatbot */
-.chatbot-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-    padding: 10px; 
-    box-sizing: border-box;
-}
-
-#chatbot-toggle {
-    width: 120px;
-    height: 120px;
-    background-color: #B64340; /* Marsala Intenso */
-    border: 5px solid #FFB7A7; /* Borda Pêssego Vibrante */
-    border-radius: 50%;
-    font-size: 0;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Sombra mais destacada */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#chatbot-toggle:hover {
-    background-color: #5D3A3B; /* Bordô Profundo */
-    transform: scale(1.08) rotate(3deg); /* Mais animação no hover */
-}
-
-#chatbot-box {
-    display: none;
-    bottom: 140px; 
-    right: 0;
-    width: 340px; /* Levemente mais largo */
-    height: 420px; /* Levemente mais alto */
-    background-color: #5D3A3B; /* Bordô Profundo (Fundo do Pop-up) */
-    border: 2px solid #FFB7A7; /* Borda de destaque */
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    flex-direction: column;
-    overflow: hidden;
-}
-
-#chatbot-box.open {
-    display: flex;
-}
-
-#chat-header {
-    background-color: #B64340; /* Marsala Intenso */
-    color: white;
-    padding: 12px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#chat-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-#chat-close:hover {
-    transform: rotate(90deg);
-    color: #FFB7A7;
-}
-
-#chat-messages {
-    flex-grow: 1;
-    padding: 15px;
-    overflow-y: auto;
-    background-color: white; 
-}
-
-.message {
-    padding: 10px 15px; /* Mais padding nas mensagens */
-    margin-bottom: 10px;
-    border-radius: 20px;
-    max-width: 85%; /* Mensagens mais longas */
-    line-height: 1.4;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-}
-
-.user-message {
-    background-color: #FFB7A7; /* Pêssego Vibrante */
-    color: #333;
-    align-self: flex-end;
-    margin-left: auto;
-    border-bottom-right-radius: 8px;
-}
-
-.bot-message {
-    background-color: #eee;
-    color: #333;
-    align-self: flex-start;
-    border-bottom-left-radius: 8px;
-}
-
-#chat-input-container {
-    display: flex;
-    border-top: 2px solid #B64340; /* Linha divisória Marsala Intenso */
-    background-color: #f7f7f7; 
-}
-
-#user-input {
-    flex-grow: 1;
-    padding: 15px;
-    border: none;
-    font-size: 1rem;
-    outline: none;
-    background-color: transparent;
-}
-
-#send-btn {
-    background-color: #B64340; /* Marsala Intenso */
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#send-btn:hover {
-    background-color: #FFB7A7; /* Pêssego Vibrante */
-    color: #5D3A3B;
-    transform: scale(1.05);
-}
-
-
-/* ----------------------------------------------- */
-/* Responsividade */
-/* ----------------------------------------------- */
-
-@media (max-width: 900px) {
-    
-    /* 1. Responsividade do Layout de Duas Colunas */
-    main {
-        padding: 15px; /* Reduz o padding do main em telas pequenas */
+    // Se os elementos do chatbot não existirem na página (apenas index.html e fale-conosco.html devem ter), a função deve sair
+    if (!chatbox || !toggleButton) {
+        return;
     }
 
-    .content-wrapper {
-        flex-direction: column; /* Transforma as duas colunas em uma única coluna */
-        gap: 20px;
+    // Função para adicionar mensagens
+    function appendMessage(sender, text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message');
+        messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+        messageDiv.innerHTML = text;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll para o final
     }
 
-    /* A barra lateral agora aparece abaixo e pode se beneficiar de um padding extra */
-    .courses-sidebar {
-        order: 2; /* Coloca a barra lateral DEPOIS do conteúdo principal */
-        padding: 15px;
+    // Função principal de resposta
+    function getBotResponse(input) {
+        const text = input.toLowerCase().trim();
+
+        // 1. Perguntas Gerais sobre Cursos Técnicos (SEDUC SP)
+        if (text.includes('duração')) {
+            return "Os cursos técnicos têm duração média de **3 a 4 semestres** (1 ano e meio a 2 anos). O curso de Vendas é o mais curto, com 2 semestres. Para mais detalhes, veja a página de Cursos.";
+        }
+        if (text.includes('requisitos') || text.includes('como entrar')) {
+            return "Para ingressar nos cursos técnicos integrados ao Ensino Médio, o aluno deve ter concluído o Ensino Fundamental. O processo é feito por meio de um vestibulinho/processo seletivo da Seduc SP.";
+        }
+        if (text.includes('mercado') || text.includes('emprego')) {
+            return "O mercado de trabalho para técnicos é excelente. Nossos cursos são alinhados com as demandas atuais de TI, Gestão e Saúde, garantindo alta empregabilidade. Consulte nosso portal de estágios (BEEM).";
+        }
+        
+        // 2. Perguntas Específicas sobre Cursos
+        if (text.includes('administração') || text.includes('adm')) {
+            return "O curso de **Administração** prepara para o planejamento e execução das rotinas administrativas, financeiras, logísticas e de RH. É um curso com alta versatilidade no mercado.";
+        }
+        if (text.includes('ciência de dados') || text.includes('dados') || text.includes('big data')) {
+            return "O curso de **Ciência de Dados** foca em coletar, analisar e interpretar grandes volumes de dados para auxiliar na tomada de decisões estratégicas em empresas, usando estatística e programação.";
+        }
+        if (text.includes('desenvolvimento de sistemas') || text.includes('dev')) {
+            return "O curso de **Desenvolvimento de Sistemas** forma o aluno para criar e manter softwares, aplicativos e websites. É uma das áreas mais aquecidas e bem remuneradas da tecnologia.";
+        }
+        if (text.includes('enfermagem') || text.includes('enf')) {
+            return "O curso de **Enfermagem** capacita o técnico para prestar assistência de saúde em hospitais e clínicas, atuando sob supervisão e com foco na humanização do atendimento.";
+        }
+        if (text.includes('farmácia') || text.includes('farm')) {
+            return "O curso de **Farmácia** prepara para a manipulação e controle de qualidade de medicamentos, e na orientação ao público sobre o uso correto de fármacos.";
+        }
+        if (text.includes('vendas')) {
+            return "O curso de **Vendas** desenvolve habilidades em comunicação, negociação, prospecção e pós-venda. O mercado de trabalho é dinâmico, permitindo atuação em qualquer setor do comércio e da indústria.";
+        }
+
+        // 3. Resposta Padrão/Fallback
+        return "Desculpe, não entendi. Tente perguntar sobre **duração**, **requisitos**, **mercado** ou o nome de um curso (**Enfermagem**, **Dev**, **Adm**).";
     }
 
-    .main-content {
-        order: 1; /* Garante que o conteúdo principal venha primeiro */
+    // Evento de Envio/Clique
+    function sendMessage() {
+        const input = userInput.value.trim();
+        if (input === "") return;
+
+        appendMessage('user', input);
+        userInput.value = '';
+
+        // Resposta do Bot
+        setTimeout(() => {
+            const response = getBotResponse(input);
+            appendMessage('bot', response);
+        }, 500); // Pequeno delay para simular o "pensamento"
     }
 
-    /* 2. Responsividade do Menu de Navegação */
-    nav {
-        flex-direction: column; /* Logo e links em coluna */
-        align-items: center;
-        padding: 10px 20px;
-    }
+    // Alternar o chatbox
+    toggleButton.addEventListener('click', () => {
+        chatbox.classList.toggle('open');
+    });
 
-    nav ul {
-        flex-direction: column; /* Links em coluna vertical */
-        text-align: center;
-        width: 100%;
-        margin-top: 15px;
-        display: none; /* Esconde o menu por padrão no mobile (seria exibido por JS) */
-    }
-    
-    /* Se você for implementar um menu hambúrguer com JS, este é o estilo para quando ele estiver aberto: */
-    /* nav ul.open { display: flex; } */
+    closeButton.addEventListener('click', () => {
+        chatbox.classList.remove('open');
+    });
 
-    nav ul li {
-        margin: 5px 0; /* Espaçamento entre os links verticais */
-        width: 100%;
-    }
+    // Enviar ao clicar no botão
+    sendButton.addEventListener('click', sendMessage);
 
-    nav ul li a {
-        display: block;
-        padding: 8px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .hero h1 {
-        font-size: 2rem; /* Reduz o tamanho do título Hero */
-    }
-    
-    .hero p {
-        font-size: 1rem; /* Reduz o tamanho do parágrafo Hero */
-    }
-    
-    /* 3. Estilos da barra lateral social no mobile (mantidos, mas com hover mais vibrante) */
-    #social-sidebar {
-        /* ... (posição) ... */
-    }
-
-    .social-btn {
-        width: 40px; /* Reduz o tamanho no mobile */
-        height: 40px;
-        font-size: 1.4rem;
-    }
-
-    .social-btn:hover {
-        /* Mantém o tamanho e usa cor vibrante */
-        width: 40px; 
-        background-color: #FFB7A7 !important; 
-        color: #5D3A3B !important;
-        transform: none; /* Remove a expansão lateral no hover mobile */
-    }
-    
-    /* 4. Ajuste do chatbot para telas pequenas */
-    #chatbot-box {
-        bottom: 110px; /* Ajuste para o botão maior e o menu social do mobile */
-        right: 10px;
-        width: 95%; /* Ocupa quase a tela inteira */
-        max-width: 300px;
-    }
-    #chatbot-container {
-        right: 10px;
-        bottom: 70px; /* Mantém o botão acima do menu social do mobile */
-    }
-    #chatbot-toggle {
-        width: 80px; 
-        height: 80px;
-        border-width: 3px; /* Borda menor */
-    }
-    #chatbot-label {
-        display: none; 
-    }
-}
+    // Enviar ao pressionar Enter
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+});

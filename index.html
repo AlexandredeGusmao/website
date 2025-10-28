@@ -34,11 +34,9 @@
         <nav>
             <div class="logo">EE Alexandre de Gusmão</div>
             <ul>
-                <li><a href="index.html">Início</a></li> 
-                
+                <li class="active"><a href="index.html">Início</a></li> 
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="https://www.beem.sp.gov.br/" target="_blank">Estágios</a></li> 
-                
                 <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="midia.html">Mídia</a></li>
                 <li><a href="https://www.educacao.sp.gov.br/" target="_blank">Seduc SP</a></li>
@@ -49,20 +47,36 @@
     </header>
 
     <main>
+        
+        <div class="hero">
+            <h1>Sua Jornada Técnica Começa Aqui!</h1>
+            <p>Seja um profissional de destaque no mercado de trabalho com nossos cursos técnicos de excelência.</p>
+        </div>
+
         <div class="content-wrapper">
             
-            <div class="main-content">
-                <section class="hero">
-                    <h1>Bem-vindo à EE Alexandre de Gusmão</h1>
-                    <p>Sua porta de entrada para o futuro profissional!</p>
-                    <div class="image-container">
-                        <img src="ag.jpeg" alt="Fachada da EE Alexandre de Gusmão">
-                    </div>
-                </section>
-            </div>
+            <section class="main-content">
+                
+                <h2>Destaques da Semana</h2>
+
+                <div class="highlight-card">
+                    <img src="eventos.jpeg" alt="Eventos da Escola" class="highlight-image">
+                    <h3>Feira de Empregabilidade 2025</h3>
+                    <p>Grandes empresas recrutando em primeira mão alunos formandos. Não perca a chance de garantir seu futuro profissional!</p>
+                    <a href="eventos.html" class="cta-button">Ver Agenda Completa</a>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="dev.jpeg" alt="Alunos programando" class="highlight-image">
+                    <h3>Novo Laboratório de Ciência de Dados</h3>
+                    <p>Inauguramos o laboratório de análise de Big Data, um ambiente moderno para capacitar os futuros cientistas de dados.</p>
+                    <a href="cursos.html#dados" class="cta-button">Conhecer o Curso</a>
+                </div>
+                
+            </section>
 
             <section class="courses-sidebar">
-                <h2>Cursos Técnicos</h2>
+                <h2>Nossos Cursos</h2>
                 <div class="course-list-sidebar">
                     <a href="cursos.html#adm" class="course-link-sidebar">
                         <img src="logoadm.jpeg" alt="Logo Administração">
@@ -122,8 +136,9 @@
             </div>
         </div>
     </div>
+    
     <footer>
-        <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>
+        <div id="access-counter">Carregando acessos...</div> <p>Endereço da Escola: <a href="https://www.google.com/maps/search/Rua+Cisplatina,+298,+Ipiranga,+S%C3%A3o+Paulo%2FSP" target="_blank">Rua Cisplatina, 298, Ipiranga, São Paulo/SP</a></p>
     </footer>
 
     <script src="script.js"></script>
