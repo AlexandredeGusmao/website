@@ -20,6 +20,23 @@
         .course-detail p { line-height: 1.6; }
         .course-info { display: flex; justify-content: space-between; margin-top: 15px; font-weight: 500; color: #5D3A3B; }
         .course-info span { display: block; margin-bottom: 5px; }
+        /* Estilos para a lista de currículo, padronizando com dados.html/adm.html */
+        .curriculum-list {
+            list-style: none;
+            padding: 0;
+        }
+        .curriculum-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 5px solid #B64340;
+            background-color: #fcf6f7;
+            border-radius: 4px;
+        }
+        .curriculum-list li strong {
+            color: #5D3A3B;
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -61,25 +78,66 @@
                 <article class="course-detail">
                     <h2>Detalhes do Curso</h2>
                     <div class="course-info">
-                        <span><i class="fas fa-clock"></i> **Duração: 3 semestres**</span>
+                        <span><i class="fas fa-clock"></i> **Duração: 4 semestres**</span>
                         <span><i class="fas fa-pills"></i> **Eixo Tecnológico: Saúde e Segurança**</span>
                     </div>
                     
                     <p>Prepara para trabalhar em farmácias, drogarias e indústrias farmacêuticas, auxiliando na manipulação, controle de qualidade, armazenamento e dispensação de medicamentos, sempre sob a supervisão de um farmacêutico responsável. O curso abrange a legislação sanitária e o atendimento ao cliente.</p>
                     
-                    <h3>Grade Curricular (Exemplo)</h3>
-                    <ul>
-                        <li>Noções de Química e Biologia</li>
-                        <li>Farmacologia e Toxicologia Básicas</li>
-                        <li>Técnicas de Manipulação de Medicamentos</li>
-                        <li>Controle de Qualidade em Farmácia</li>
-                        <li>Legislação e Ética Farmacêutica</li>
-                    </ul>
-                    
                     <h3>Onde Atuar</h3>
                     <p>Farmácias comunitárias, drogarias, hospitais, laboratórios de análises clínicas e indústrias de medicamentos e cosméticos.</p>
                     
                     <a href="fale-conosco.html" class="cta-button">Inscreva-se ou Tire Dúvidas!</a>
+                </article>
+
+                <article class="course-detail">
+                    <h2>Componentes Curriculares</h2>
+                    <ul class="curriculum-list">
+                        <li>
+                            <strong>Fisiopatologia:</strong>
+                            Apresenta os sistemas do corpo humano e suas vulnerabilidades. Permite entender o desenvolvimento de doenças por meio da lesão e morte celular, inflamação, neoplasias e mecanismos imunológicos. [cite_start]Inclui Anatomia, Fisiologia, Patologia Geral, Imunologia e Microbiologia/Parasitologia.
+                        </li>
+                        <li>
+                            <strong>Drogaria:</strong>
+                            Foca na dispensação e orientação correta de medicamentos e produtos farmacêuticos ao cliente , promovendo o uso racional e seguro. Aborda Farmacologia (Vias de Administração, Farmacocinética, classes de medicamentos) e Gerenciamento de Estoque, Armazenamento e Transporte.
+                        </li>
+                        <li>
+                            <strong>Farmácia de Manipulação 1:</strong>
+                            Apresenta procedimentos farmacotécnicos para produção de medicamentos alopáticos, cosméticos e produtos farmacêuticos em formas líquidas, sólidas e semissólidas, e produtos estéreis. Foca em Boas Práticas de Manipulação.
+                        </li>
+                        <li>
+                            <strong>Ciências Aplicadas à Farmácia:</strong>
+                            Componente introdutório e de nivelamento que abrange conceitos básicos de Química (Orgânica, Geral, Analítica Qualitativa/Quantitativa), Física (Fenômenos, Aplicações Farmacêuticas), Matemática e Estatística (Descritiva, Testes de Hipóteses), essenciais para a produção e garantia da qualidade de medicamentos[cite: 61].
+                        </li>
+                        <li>
+                            <strong>Análises Clínicas:</strong>
+                            Apresenta as técnicas para coleta de amostras citológicas e fluidos biológicos, processamento pré-analítico e análise primária. Demonstra avaliação macroscópica e microscópica de amostras e a utilização de equipamentos automatizados (hematologia, bioquímica, etc.).
+                        </li>
+                        <li>
+                            <strong>Farmácia de Manipulação 2:</strong>
+                            Foca em procedimentos para produção de produtos **homeopáticos** e **fitoterápicos**. Cobre a manipulação de medicamentos homeopáticos e a extração de princípios ativos e formas farmacêuticas fitoterápicas. [cite_start]Inclui Controle Físico-Químico, Biológico e Microbiológico dos produtos.
+                        </li>
+                        <li>
+                            <strong>Farmácia Hospitalar:</strong>
+                            Demonstra a gestão e estrutura organizacional de farmácias em hospitais, e capacita o estudante para atuar na farmacotécnica hospitalar, incluindo fracionamento e manipulação estéril (Antibióticos, Citostáticos, Nutrição Parenteral).
+                        </li>
+                        <li>
+                            <strong>Biotecnologia:</strong>
+                            Apresenta as ferramentas biotecnológicas utilizadas pela indústria farmacêutica. Aborda conceitos de biologia molecular e técnicas de cultivo de células para produção de insumos farmacêuticos (proteínas, anticorpos, vacinas, biofármacos) utilizando Organismos Geneticamente Modificados (OGM).
+                        </li>
+                        <li>
+                            <strong>Assuntos Regulatórios e Legislação:</strong>
+                            Cobre a legislação, normas e regulamentos que regem a atividade farmacêutica, incluindo o processo de registro de medicamentos e produtos em agências reguladoras (Anvisa, ANA, ANS). Desenvolve atitudes éticas e de responsabilidade profissional.
+                        </li>
+                        <li>
+                            <strong>Carreira e Competências para o Mercado de Trabalho:</strong>
+                            Visa desenvolver habilidades fundamentais para o mundo do trabalho, abordando autoconhecimento, finanças pessoais, direitos e deveres, planejamento de carreira e os caminhos para o empreendedorismo com a elaboração de um Plano de Negócios Simplificado.
+                        </li>
+                        <li>
+                            <strong>Projeto Multidisciplinar:</strong>
+                            [cite_start]Tem como objetivo mobilizar as competências técnicas e socioemocionais adquiridas no curso por meio do desenvolvimento de um projeto prático, cobrindo todas as etapas de planejamento, organização e apresentação.
+                        </li>
+                    </ul>
                 </article>
 
             </section>

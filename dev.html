@@ -20,9 +20,28 @@
         .course-detail p { line-height: 1.6; }
         .course-info { display: flex; justify-content: space-between; margin-top: 15px; font-weight: 500; color: #5D3A3B; }
         .course-info span { display: block; margin-bottom: 5px; }
+
+        /* Estilos para a lista de currículo, padronizando com dados.html */
+        .curriculum-list {
+            list-style: none;
+            padding: 0;
+        }
+        .curriculum-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 5px solid #B64340;
+            background-color: #fcf6f7;
+            border-radius: 4px;
+        }
+        .curriculum-list li strong {
+            color: #5D3A3B;
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
+    
     <div id="social-sidebar">
         <a href="#" class="social-btn discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
         <a href="#" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -51,7 +70,7 @@
         
         <div class="hero">
             <h1>Técnico em Desenvolvimento de Sistemas</h1>
-            <p>Construa o futuro digital com programação web e mobile.</p>
+            <p>Construa o futuro digital com código e inovação.</p>
         </div>
 
         <div class="content-wrapper">
@@ -61,25 +80,62 @@
                 <article class="course-detail">
                     <h2>Detalhes do Curso</h2>
                     <div class="course-info">
-                        <span><i class="fas fa-clock"></i> **Duração: 3 semestres**</span>
-                        <span><i class="fas fa-code"></i> **Eixo Tecnológico: Informação e Comunicação**</span>
+                        <span><i class="fas fa-clock"></i> **Duração: 4 semestres**</span>
+                        <span><i class="fas fa-desktop"></i> **Eixo Tecnológico: Informação e Comunicação**</span>
                     </div>
                     
-                    <p>Capacita o aluno a projetar, desenvolver e testar sistemas de software para web e dispositivos móveis, utilizando as linguagens de programação e metodologias ágeis mais atuais do mercado. Você aprenderá a criar desde o design de front-end até a lógica de back-end.</p>
-                    
-                    <h3>Grade Curricular (Exemplo)</h3>
-                    <ul>
-                        <li>Lógica de Programação e Algoritmos</li>
-                        <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
-                        <li>Programação Back-end (Ex: Python, Java ou C#)</li>
-                        <li>Banco de Dados e SQL</li>
-                        <li>Desenvolvimento Mobile Básico</li>
-                    </ul>
+                    <p>O curso prepara o aluno para projetar, desenvolver e testar sistemas de software. O foco é em programação para diversas plataformas (web e desktop), banco de dados e metodologias ágeis de desenvolvimento.</p>
                     
                     <h3>Onde Atuar</h3>
-                    <p>Em empresas de desenvolvimento de software, startups, departamentos de TI de grandes corporações, ou como freelancer no desenvolvimento de websites e aplicações.</p>
+                    <p>Empresas de software, startups, indústrias, instituições financeiras ou como autônomo (freelancer), atuando como desenvolvedor Front-end, Back-end, Full-Stack Júnior, Analista de Sistemas Júnior, e mais.</p>
                     
                     <a href="fale-conosco.html" class="cta-button">Inscreva-se ou Tire Dúvidas!</a>
+                </article>
+
+                <article class="course-detail">
+                    <h2>Componentes Curriculares</h2>
+                    <ul class="curriculum-list">
+                        <li>
+                            <strong>Lógica e Linguagem de Programação:</strong>
+                            Aborda conceitos de lógica, algoritmos, variáveis, constantes, operadores, estruturas de seleção e repetição, vetores, matrizes, ponteiros, funções e passagem de parâmetros. O trabalho é feito com Algoritmos e **C# Windows Forms Application**.
+                        </li>
+                        <li>
+                            <strong>Versionamento de Código e Sistemas de Mensageria:</strong>
+                            Foca na importância do controle de versões. Introduz **Git** (conceitos básicos, operações como clone, commit, push, branches e merges) e **GitHub** (colaboração, pull requests, issues). Aborda fluxo de trabalho (GitFlow, GitHub Flow) e **CI/CD** (Integração Contínua e Entrega Contínua).
+                        </li>
+                        <li>
+                            <strong>Internet das Coisas (IoT) e Computação em Nuvem:</strong>
+                            Apresenta conceitos de IoT, dispositivos e sensores, arquitetura, segurança e privacidade em IoT. Em Computação em Nuvem, aborda modelos de serviço (IaaS, PaaS, SaaS) e conceitos de plataformas como **AWS, Google Cloud e Azure**.
+                        </li>
+                        <li>
+                            <strong>Web Design, Frameworks de Front-end e UX/UI:</strong>
+                            Desenvolve habilidades para a criação de interfaces web. Abrange **HTML, CSS, JavaScript** (incluindo DOM), Frameworks de Front-end (**React, Angular, Vue.js**), conceitos de UX/UI, Acessibilidade e Web Responsiva.
+                        </li>
+                        <li>
+                            <strong>Programação Orientada a Objetos (POO):</strong>
+                            Foca em **Java** (Instalação, configuração) e conceitos de POO (Classe, Objeto, Encapsulamento, Herança, Polimorfismo). Inclui exceções, tratamento de erro e uso de Java com MySQL.
+                        </li>
+                        <li>
+                            <strong>Estrutura de Dados e Análise de Algoritmos:</strong>
+                            Aborda conceitos de Estrutura de Dados, Tipos Abstratos de Dados, e Estruturas Lineares (Lista, Fila, Pilha). Foca em Estruturas Não Lineares (Árvore, Grafo) e na análise da eficiência de algoritmos (complexidade de tempo e espaço).
+                        </li>
+                        <li>
+                            <strong>DevOps e Segurança da Informação:</strong>
+                            Introduz conceitos de **DevOps** (cultura, automação), ferramentas (**Docker, Kubernetes**) e ambientes de desenvolvimento/produção. Em Segurança, cobre autenticação, autorização, criptografia, ataques comuns (XSS, SQL Injection), **LGPD** e proteção de dados.
+                        </li>
+                        <li>
+                            <strong>Carreira e Competências para o Mercado de Trabalho:</strong>
+                            Visa desenvolver habilidades práticas, autoconhecimento, finanças pessoais, direitos/deveres e os fundamentos iniciais do empreendedorismo, incluindo a elaboração de um **Plano de Negócios Simplificado**.
+                        </li>
+                        <li>
+                            <strong>Banco de Dados:</strong>
+                            Abrange desde conceitos fundamentais (modelo relacional, formas normais) até comandos **SQL** (DDL, DML - CRUD) para manipulação de dados em SGBDs Relacionais (ex: Oracle SQL Plus).
+                        </li>
+                        <li>
+                            <strong>Projeto Multidisciplinar:</strong>
+                            Atua como um integrador, permitindo a aplicação prática e contextualizada de todas as competências técnicas e socioemocionais adquiridas no curso por meio do desenvolvimento de um projeto prático.
+                        </li>
+                    </ul>
                 </article>
 
             </section>
