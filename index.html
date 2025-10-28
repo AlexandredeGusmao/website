@@ -9,6 +9,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Ajustando para layout vertical */
+        .image-text-group {
+            /* Remove o display: flex para que os elementos fiquem empilhados */
+            display: block; 
+            margin-bottom: 30px; 
+            text-align: center; /* Centraliza a imagem e o texto (se forem elementos inline ou centralizáveis) */
+        }
+        
+        .description-text {
+            /* O texto agora ocupa a largura total disponível */
+            flex: none; 
+            width: 90%; /* Ajuste a largura para o texto não ficar colado nas bordas */
+            margin: 20px auto 0 auto; /* Centraliza o texto e adiciona margem acima */
+            background-color: white; 
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #5D3A3B; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: left; /* Garante que o texto fique alinhado à esquerda dentro do seu bloco */
+        }
+
+        .description-text h2 {
+            text-align: center; /* Centraliza o título do texto */
+        }
+
+        .description-text strong {
+            color: #B64340; 
+        }
+
+        .single-main-image {
+            /* Imagem agora centralizada e com margem automática */
+            max-width: 20%; /* Mantém o tamanho de 20% solicitado */
+            height: auto;
+            display: block; 
+            margin: 0 auto; /* Centraliza a imagem */
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #FFB7A7; 
+        }
+        
+        /* O media query para telas menores não é mais estritamente necessário
+           com display: block, mas podemos mantê-lo para ajustes finos: */
+        @media (max-width: 768px) {
+            .single-main-image {
+                max-width: 40%; /* Aumenta a imagem no mobile para melhor visualização */
+            }
+            .description-text {
+                width: 100%; /* Ocupa a largura total no mobile */
+                margin-top: 20px;
+            }
+        }
+    </style>
+    
 </head>
 <body>
     
@@ -49,37 +106,25 @@
     <main>
         
         <div class="hero">
-            <h1>Sua Jornada Técnica Começa Aqui!</h1>
-            <p>Seja um profissional de destaque no mercado de trabalho com nossos cursos técnicos de excelência.</p>
+            <h1>Itinerários de Formação Técnica e Profissional.</h1>
+            <p>Seja um profissional de destaque no mercado de trabalho através do Programa Educação Profissional Paulista da SEDUC SP, que oferece cursos alinhados às demandas regionais.</p>
         </div>
 
         <div class="content-wrapper">
             
             <section class="main-content">
                 
-                <h2>Destaques da Semana</h2>
-
-                <div class="highlight-card">
-                    <img src="eventos.jpeg" alt="Eventos da Escola" class="highlight-image">
-                    <h3>Feira de Empregabilidade 2025</h3>
-                    <p>Grandes empresas recrutando em primeira mão alunos formandos. Não perca a chance de garantir seu futuro profissional!</p>
-                    <a href="eventos.html" class="cta-button">Ver Agenda Completa</a>
+                <div class="image-text-group">
+                    
+                    <img src="eeagtech.jpeg" alt="E.E. Tec - Desperte seu Potencial" class="single-main-image">
+                    
+                    <div class="description-text">
+                        <h2>Entenda o Ensino Técnico Paulista</h2>
+                        <p>O Ensino Técnico Paulista, promovido pela SEDUC SP, visa integrar a formação geral do Ensino Médio com o aprendizado profissionalizante. O estudante cursa o Ensino Médio regular e, a partir da 2ª série, pode ingressar em um dos Itinerários de Formação Técnica e Profissional oferecidos.</p>
+                        <p>O programa tem como compromisso a <strong>Educação Integral</strong>, desenvolvendo o aluno em todas as dimensões, e está alinhado à Base Nacional Comum Curricular (BNCC). Oferecemos cursos técnicos na própria escola, com foco nas demandas do mercado de trabalho regional, preparando você para ser um profissional de destaque.</p>
+                    </div>
+                    
                 </div>
-                
-                <div class="highlight-card">
-                    <img src="dev.jpeg" alt="Alunos programando" class="highlight-image">
-                    <h3>Novo Laboratório de Ciência de Dados</h3>
-                    <p>Inauguramos o laboratório de análise de Big Data, um ambiente moderno para capacitar os futuros cientistas de dados.</p>
-                    <a href="cursos.html#dados" class="cta-button">Conhecer o Curso</a>
-                </div>
-
-                <h2 style="margin-top: 40px;">Por Que Estudar na Alexandre de Gusmão?</h2>
-                <ul class="why-us-list">
-                    <li><i class="fas fa-check-circle"></i> **Infraestrutura Moderna:** Laboratórios de ponta para todas as áreas técnicas.</li>
-                    <li><i class="fas fa-check-circle"></i> **Parcerias com o Mercado:** Altíssima taxa de empregabilidade e acesso a estágios.</li>
-                    <li><i class="fas fa-check-circle"></i> **Corpo Docente Qualificado:** Professores com experiência profissional nas áreas de ensino.</li>
-                    <li><i class="fas fa-check-circle"></i> **Foco na Inovação:** Metodologias ativas e uso de tecnologia em sala de aula.</li>
-                </ul>
                 
             </section>
 

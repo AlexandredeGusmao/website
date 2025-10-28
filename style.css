@@ -105,6 +105,22 @@ main {
 
 .main-content {
     flex: 3; /* Ocupa 3 partes do espaço */
+    /* Garante que o fundo bege rosado seja mantido */
+    background-color: #F5E6E8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para a Imagem Única no Index.html (NOVO) */
+.single-main-image {
+    max-width: 80%; /* Ajuste o tamanho conforme desejar */
+    height: auto;
+    display: block; /* Garante que ela se comporte como um bloco para margin auto */
+    margin: 30px auto; /* Centraliza a imagem */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #FFB7A7; /* Adiciona uma borda sutil */
 }
 
 .courses-sidebar {
@@ -114,6 +130,8 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     align-self: flex-start; /* Fixa o topo */
+    position: sticky;
+    top: 20px;
 }
 
 .main-content h2,
@@ -126,33 +144,7 @@ main {
     margin-bottom: 20px;
 }
 
-/* Estilo para os cards de destaque (index.html) */
-.highlight-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.highlight-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.highlight-card h3 {
-    color: #5D3A3B;
-    padding: 15px 15px 5px;
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
-}
-
-.highlight-card p {
-    padding: 0 15px;
-    font-size: 0.95rem;
-}
-
+/* Elementos Comuns (Botões) */
 .cta-button {
     display: block;
     text-align: center;
@@ -162,6 +154,9 @@ main {
     text-decoration: none;
     font-weight: 700;
     transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .cta-button:hover {
@@ -169,21 +164,6 @@ main {
     color: #5D3A3B;
 }
 
-/* Lista "Por Que Estudar" */
-.why-us-list {
-    list-style: none;
-    padding: 0;
-}
-.why-us-list li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #B6434050;
-    font-weight: 500;
-    color: #5D3A3B;
-}
-.why-us-list li i {
-    color: #B64340;
-    margin-right: 10px;
-}
 
 /* Sidebar de Cursos (Cursos Rápidos) */
 .course-list-sidebar {
@@ -219,7 +199,137 @@ main {
 }
 
 /* ----------------------------------------------- */
-/* Footer e Contador de Acesso */
+/* Cursos Page Styles (cursos.html) */
+/* ----------------------------------------------- */
+.course-detail {
+    background-color: white; 
+    border: 1px solid #FFB7A7; /* Borda mais leve */
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.course-detail h2 {
+    color: #B64340;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #FFB7A7; 
+}
+
+.course-detail p { line-height: 1.6; }
+
+.course-image {
+    width: 120px; 
+    height: 120px;
+    object-fit: contain;
+    padding: 10px;
+    border: 2px solid #B64340; 
+    border-radius: 8px;
+    background-color: #F5E6E8; /* Fundo leve para o logo */
+    flex-shrink: 0;
+}
+
+.course-text-content {
+    flex-grow: 1;
+    min-width: 250px;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #5D3A3B;
+    width: 100%;
+}
+
+.course-info span { display: block; margin-bottom: 5px; }
+
+
+/* ----------------------------------------------- */
+/* Fale Conosco Page Styles (fale-conosco.html) */
+/* ----------------------------------------------- */
+
+.contact-sections-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.contact-form { flex: 2; }
+.contact-info { flex: 1; }
+
+.contact-form, .contact-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px; /* Mantém a margem para mobile */
+}
+
+.contact-form h2, .contact-info h2 {
+    color: #B64340; 
+    border-bottom: 2px solid #FFB7A7; 
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #5D3A3B; 
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #F5E6E8; 
+    box-sizing: border-box; 
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #B64340; 
+    box-shadow: 0 0 0 3px rgba(182, 67, 64, 0.2);
+    outline: none;
+    background-color: white;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.contact-info i {
+    color: #B64340; 
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* ----------------------------------------------- */
+/* Rodapé (Footer) e Contador de Acesso */
 /* ----------------------------------------------- */
 
 footer {
@@ -228,6 +338,10 @@ footer {
     text-align: center;
     padding: 20px 20px;
     margin-top: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    /* Linha sutil para separar o contador do conteúdo principal do footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 footer p {
@@ -246,18 +360,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Estilo para o Contador de Acesso (Novo) */
 #access-counter {
     text-align: center;
     margin-bottom: 10px;
     font-size: 0.85rem;
-    color: #FFB7A7; /* Pêssego Vibrante, para destaque no rodapé escuro */
+    color: #FFB7A7; 
     font-weight: 500;
-    padding-top: 10px;
-    /* Linha sutil para separar o contador do conteúdo principal do footer */
-    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    padding-top: 0;
+    border-top: none; /* Já está no footer */
 }
-
 
 /* ----------------------------------------------- */
 /* Barra Social Flutuante */
@@ -289,7 +400,7 @@ footer a:hover {
 }
 
 .social-btn:hover {
-    width: 50px; /* Aumenta um pouco ao passar o mouse */
+    width: 50px; 
     border-radius: 5px 0 0 5px;
 }
 
@@ -300,7 +411,6 @@ footer a:hover {
 .youtube { background-color: #FF0000; }
 .tiktok { background-color: #000000; }
 
-/* Adicionando hover mais vibrante para a consistência do tema */
 .social-btn:hover {
     background-color: #FFB7A7 !important; 
     color: #5D3A3B !important;
@@ -314,7 +424,7 @@ footer a:hover {
 #chatbot-container {
     position: fixed;
     bottom: 20px;
-    right: 70px; /* Posiciona à esquerda da barra social */
+    right: 70px; 
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -322,17 +432,17 @@ footer a:hover {
 }
 
 #chatbot-label {
-    background-color: #B64340; /* Marsala Intenso */
+    background-color: #B64340; 
     color: white;
     padding: 5px 10px;
     border-radius: 5px 5px 0 0;
     font-size: 0.8rem;
     font-weight: 700;
-    display: none; /* Inicia escondido no desktop */
+    display: none; 
 }
 
 #chatbot-toggle {
-    background-color: #B64340; /* Marsala Intenso */
+    background-color: #B64340; 
     border: none;
     border-radius: 50%;
     width: 60px;
@@ -344,7 +454,7 @@ footer a:hover {
 }
 
 #chatbot-toggle:hover {
-    background-color: #FFB7A7; /* Pêssego Vibrante */
+    background-color: #FFB7A7; 
     transform: scale(1.1);
 }
 
@@ -361,11 +471,11 @@ footer a:hover {
     border: 1px solid #B64340;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: none; /* Inicia escondida */
+    display: none; 
     flex-direction: column;
     overflow: hidden;
     position: absolute;
-    bottom: 70px; /* Acima do botão */
+    bottom: 70px; 
     right: 0;
 }
 
@@ -374,7 +484,7 @@ footer a:hover {
 }
 
 #chat-header {
-    background-color: #5D3A3B; /* Bordô Profundo */
+    background-color: #5D3A3B; 
     color: white;
     padding: 10px;
     font-weight: 700;
@@ -400,7 +510,7 @@ footer a:hover {
     flex-grow: 1;
     padding: 10px;
     overflow-y: auto;
-    background-color: #F5E6E8; /* Bege Rosado */
+    background-color: #F5E6E8; 
 }
 
 .message {
@@ -413,14 +523,14 @@ footer a:hover {
 }
 
 .bot-message {
-    background-color: #FFB7A7; /* Pêssego Vibrante */
+    background-color: #FFB7A7; 
     color: #5D3A3B;
     align-self: flex-start;
     border-bottom-left-radius: 2px;
 }
 
 .user-message {
-    background-color: #B64340; /* Marsala Intenso */
+    background-color: #B64340; 
     color: white;
     align-self: flex-end;
     margin-left: auto;
@@ -442,7 +552,7 @@ footer a:hover {
 }
 
 #send-btn {
-    background-color: #B64340; /* Marsala Intenso */
+    background-color: #B64340; 
     color: white;
     border: none;
     padding: 15px 20px;
@@ -451,7 +561,7 @@ footer a:hover {
 }
 
 #send-btn:hover {
-    background-color: #FFB7A7; /* Pêssego Vibrante */
+    background-color: #FFB7A7; 
     color: #5D3A3B;
     transform: scale(1.05);
 }
@@ -470,9 +580,14 @@ footer a:hover {
 
     .main-content,
     .courses-sidebar {
-        flex: auto; /* Permite que ambos ocupem a largura total */
+        flex: auto;
     }
     
+    /* Remove o sticky na sidebar em telas menores */
+    .courses-sidebar {
+        position: static;
+    }
+
     /* 2. Navegação (Menu Hambúrguer - Simplificação) */
     nav {
         flex-direction: column;
@@ -483,7 +598,7 @@ footer a:hover {
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
-        display: none; /* Oculta o menu (Pode ser ativado com JS) */
+        display: none; 
     }
 
     nav ul li {
@@ -492,9 +607,6 @@ footer a:hover {
         width: 100%;
     }
     
-    /* Nota: Para um menu 'hambúrguer' completo e funcional, seria necessário JavaScript adicional 
-       para alternar a classe 'display: flex' no nav ul. */
-
     /* 3. Barra Social (Reposicionamento/Ajuste no Mobile) */
     #social-sidebar {
         position: fixed;
@@ -506,15 +618,15 @@ footer a:hover {
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
-        height: 50px; /* Altura fixa para a barra */
-        background-color: #5D3A3B; /* Bordô Profundo */
+        height: 50px; 
+        background-color: #5D3A3B; 
         box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
         padding: 0;
         gap: 0;
     }
 
     .social-btn {
-        width: 20%; /* Ocupa a largura para facilitar o toque */
+        width: 20%; 
         height: 100%;
         border-radius: 0;
         box-shadow: none;
@@ -522,7 +634,7 @@ footer a:hover {
         transition: background-color 0.2s;
     }
     .social-btn:hover {
-        width: 20%; /* Mantém o tamanho */
+        width: 20%; 
     }
     
     /* Ajuste para o rodapé devido à barra social fixa */
@@ -533,7 +645,7 @@ footer a:hover {
     /* 4. Ajuste do Chatbot para telas pequenas */
     #chatbot-container {
         right: 10px;
-        bottom: 70px; /* Acima da barra social */
+        bottom: 70px; 
     }
     
     #chatbot-toggle {
@@ -547,10 +659,20 @@ footer a:hover {
     }
 
     #chatbot-box {
-        width: 90vw; /* Ocupa a maior parte da tela */
-        height: 70vh; /* Ocupa uma boa parte da altura */
-        right: -5px; /* Alinha com a borda direita da tela */
+        width: 90vw; 
+        height: 70vh; 
+        right: -5px; 
         bottom: 60px;
+    }
+
+    /* Fale Conosco: quebra de coluna em telas menores */
+    .contact-sections-container {
+        flex-direction: column;
+    }
+
+    .contact-form, .contact-info {
+        flex: auto;
+        margin-bottom: 20px;
     }
 }
 
@@ -568,140 +690,4 @@ footer a:hover {
         font-size: 1.3rem;
     }
 }
-
-/* ----------------------------------------------- */
-/* Fale Conosco Page Improvements (Form and Info) */
-/* ----------------------------------------------- */
-
-/* Formata o formulário e a seção de informações como "cards" brancos */
-.contact-form, .contact-info {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-}
-
-.contact-form h2, .contact-info h2 {
-    color: #B64340; /* Marsala Intenso */
-    border-bottom: 2px solid #FFB7A7; /* Pêssego Vibrante */
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    font-family: 'Roboto Slab', serif;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 700;
-    color: #5D3A3B; /* Bordô Profundo */
-}
-
-/* Estilo padronizado e alinhado para todos os campos de input e textarea */
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: #F5E6E8; /* Bege Rosado para o fundo do input */
-    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: #B64340; /* Foco Marsala Intenso */
-    box-shadow: 0 0 0 3px rgba(182, 67, 64, 0.2);
-    outline: none;
-    background-color: white;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* Estilo para as informações de contato */
-.contact-info p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-}
-
-.contact-info i {
-    color: #B64340; /* Marsala Intenso para os ícones */
-    margin-right: 10px;
-    width: 20px; /* Ajuda a alinhar o texto após os ícones */
-    text-align: center;
-}
-
-/* Layout opcional para desktop: Form e Info lado a lado */
-@media (min-width: 768px) {
-    .contact-sections-container {
-        display: flex;
-        gap: 30px;
-        align-items: flex-start;
-    }
-    
-    /* Ambos terão a mesma largura em desktop */
-    .contact-form {
-        flex: 2; /* Formulário pode ser um pouco maior */
-    }
-    .contact-info {
-        flex: 1; /* Informações de contato menores */
-    }
-
-    /* Remove o margin-bottom para o container gerenciar o espaçamento */
-    .contact-form, .contact-info {
-        margin-bottom: 0;
-    }
-}
-
-/* ----------------------------------------------- */
-/* Estilos para Imagens nos Cards de Curso */
-/* ----------------------------------------------- */
-.course-detail {
-    /* Garante que a imagem e o texto possam ser dispostos lado a lado */
-    display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
-    gap: 20px;
-}
-
-.course-image {
-    width: 120px; /* Largura fixa da imagem */
-    height: 120px;
-    object-fit: contain; /* Garante que a imagem inteira seja visível */
-    padding: 10px;
-    border: 2px solid #FFB7A7; /* Borda Pêssego */
-    border-radius: 8px;
-    background-color: white;
-    flex-shrink: 0; /* Impede que a imagem encolha */
-}
-
-.course-text-content {
-    flex-grow: 1; /* Permite que o conteúdo de texto ocupe o espaço restante */
-    min-width: 250px; /* Garante que o texto tenha espaço mínimo em desktop */
-}
-
-.course-detail h2 {
-    /* Ajusta o alinhamento do título quando a imagem está presente */
-    margin-top: -5px;
-}
-
-/* Responsividade: Em telas menores, a imagem ocupa a largura total antes de quebrar */
-@media (max-width: 600px) {
-    .course-image {
-        width: 100%;
-        height: auto;
-        max-height: 150px;
-        margin-bottom: 10px;
-    }
-}
+/* O colchete extra foi removido daqui! */
